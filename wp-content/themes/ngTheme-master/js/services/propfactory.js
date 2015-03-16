@@ -11,6 +11,8 @@ app.factory ('PropFactory', [function(){
 		},
 		some : false
 
+		
+
 	};
 
 

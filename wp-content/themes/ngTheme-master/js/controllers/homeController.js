@@ -9,6 +9,8 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", func
   PropFactory.some = true;
   console.log("some: ", PropFactory.some);
 
+  
+
   //get all pages
   Pages.get();
 
