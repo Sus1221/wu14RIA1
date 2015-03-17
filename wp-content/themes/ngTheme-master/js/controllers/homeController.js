@@ -5,6 +5,8 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", func
   console.log("homeController alive!");
   PropFactory.Hello('Hugo');
   PropFactory.surpriseMe();
+  PropFactory.surpriseMe();
+  PropFactory.surpriseMe();
   console.log("some: ", PropFactory.some);
   PropFactory.some = true;
   console.log("some: ", PropFactory.some);

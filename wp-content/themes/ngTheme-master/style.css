@@ -6551,6 +6551,12 @@ button.close {
   background-repeat: no-repeat;
   border-radius: 4px;
 }
+
+#logo {
+	width: 100%;
+
+}
+
 /* Sticky footer */
 html,
 body {
