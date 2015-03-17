@@ -758,20 +758,6 @@ if(function_exists("register_field_group"))
 				'formatting' => 'html',
 				'maxlength' => 99,
 			),
-			array (
-				'key' => 'field_5506b7ca4f3b4',
-				'label' => 'Rubrik',
-				'name' => 'Heding',
-				'type' => 'text',
-				'instructions' => 'ange rubrik för objektet',
-				'required' => 1,
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => 150,
-			),
 		),
 		'location' => array (
 			array (
