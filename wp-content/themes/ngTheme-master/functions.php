@@ -254,16 +254,16 @@ add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
     //add a new property to the data that is going to AngularJS,
     //and fill it with our metadata
     $data['property_data'] = array(
-    'town' => get_post_meta( $post['ID'], 'town', true ),
-    'region' => get_post_meta( $post['ID'], 'region', true ),
+    'city' => get_post_meta( $post['ID'], 'city', true ),
+    'municipality' => get_post_meta( $post['ID'], 'municipality', true ),
     'asking_price' => get_post_meta( $post['ID'], 'asking_price', true ),
-    'monthly_fee' => get_post_meta( $post['ID'], 'monthly_fee', true ),
-    'area_m2' => get_post_meta( $post['ID'], 'area_m2', true ),
+    'running-costs' => get_post_meta( $post['ID'], 'running-costs', true ),
+    'area' => get_post_meta( $post['ID'], 'area', true ),
     'rooms' => get_post_meta( $post['ID'], 'rooms', true ),
-    'floor' => get_post_meta( $post['ID'], 'floor', true ),
-    'elevator' => get_post_meta( $post['ID'], 'elevator', true ),
-    'balcony' => get_post_meta( $post['ID'], 'balcony', true ),
-    'property_type' => get_post_meta( $post['ID'], 'property_type', true ),
+    'biarea' => get_post_meta( $post['ID'], 'biarea', true ),
+    'building-year' => get_post_meta( $post['ID'], 'building-year', true ),
+    'object-type' => get_post_meta( $post['ID'], 'object-type', true ),
+    'adress' => get_post_meta( $post['ID'], 'adress', true ),
     );
     return $data;
     }, 10, 3 );
