@@ -38,9 +38,9 @@
 	</nav>	
 	<form>
 	  <div class="input-group">
-	   <input type="search" class="form-control" id="search" placeholder="Område">
+	   <input type="search" class="form-control" id="search" placeholder="Område" ng-model="searchWord">
 	   	<span class="input-group-btn">
-	    	<button class="btn btn-default" type="button">Sök</button>
+	    	<button class="btn btn-default" type="button" ng-click="doSearch();">Sök</button>
 	   	</span>
 		</div>
 	</form>
