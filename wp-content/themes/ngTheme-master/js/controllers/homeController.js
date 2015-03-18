@@ -3,7 +3,6 @@
 
 app.controller("homeController", ["$scope", "Pages", "$sce", "Property", function($scope, Pages, $sce, Property) {
   console.log("homeController alive!");
-  Property.find();
 
   //get all pages
   Pages.get();
