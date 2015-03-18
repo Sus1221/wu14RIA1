@@ -267,3 +267,13 @@ add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
     );
     return $data;
     }, 10, 3 );
+
+    //add support for meta data queries when not logged in
+    function addMetaDataSearch() {
+      global $wp;
+     
+      // Add additional key to support.
+      array_push($wp->public_query_vars, 'meta_key');
+      array_push($wp->public_query_vars, 'meta_value');
+    }
+    add_action("init", "addMetaDataSearch");
