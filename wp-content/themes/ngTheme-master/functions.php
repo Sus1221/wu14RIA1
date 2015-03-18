@@ -206,3 +206,64 @@ if ( function_exists( 'register_nav_menus' ) ) {
 }
 
 add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
+
+/* Här kommer taxonomin */
+
+    //create a custom taxonomy called property
+    //using a named funtion
+    function property_init() {
+    // create a new taxonomy
+    register_taxonomy(
+    'proptaxonomy',
+    'attachment', //default content type this taxonomy belong to
+    array(
+    'label' => __( 'Fastighet' ),
+    'rewrite' => array( 'slug' => 'proptaxonomy' ),
+    )
+    );
+    }
+    //'property_init' is the name of our function above
+    //which will run on WordPress 'init' (everytime WordPress starts)
+    add_action( 'init', 'property_init' );
+     
+     
+    //make custom taxonomy available to pages as well
+    function ngwp_add_property_tax_to_posts() {
+    register_taxonomy_for_object_type( 'proptaxonomy', 'post' );
+    }
+     
+    add_action( 'init' , 'ngwp_add_property_tax_to_posts' );
+
+
+/* REST */
+
+    add_filter( 'json_prepare_post', function ($data, $post, $context) {
+    /*
+    Custom field names (created with Advanced Custom Fields plugin)
+    town
+    region
+    asking_price
+    monthly_fee
+    area_m2
+    rooms
+    floor
+    elevator
+    balcony
+    property_type
+    */
+    //add a new property to the data that is going to AngularJS,
+    //and fill it with our metadata
+    $data['property_data'] = array(
+    'town' => get_post_meta( $post['ID'], 'town', true ),
+    'region' => get_post_meta( $post['ID'], 'region', true ),
+    'asking_price' => get_post_meta( $post['ID'], 'asking_price', true ),
+    'monthly_fee' => get_post_meta( $post['ID'], 'monthly_fee', true ),
+    'area_m2' => get_post_meta( $post['ID'], 'area_m2', true ),
+    'rooms' => get_post_meta( $post['ID'], 'rooms', true ),
+    'floor' => get_post_meta( $post['ID'], 'floor', true ),
+    'elevator' => get_post_meta( $post['ID'], 'elevator', true ),
+    'balcony' => get_post_meta( $post['ID'], 'balcony', true ),
+    'property_type' => get_post_meta( $post['ID'], 'property_type', true ),
+    );
+    return $data;
+    }, 10, 3 );
