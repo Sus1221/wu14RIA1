@@ -1,11 +1,14 @@
 //"ngTheme" home controller.
 //dependent on $scope && WPService being injected to run
 
-app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", function($scope, Pages, $sce, PropFactory) {
+app.controller("homeController", ["$scope", "Pages", "$sce", "Property", function($scope, Pages, $sce, Property) {
   console.log("homeController alive!");
+<<<<<<< HEAD
   
 
   
+=======
+>>>>>>> 49616ea37fee2e7927e1f4b981a24fa5de685882
 
   //get all pages
   Pages.get();

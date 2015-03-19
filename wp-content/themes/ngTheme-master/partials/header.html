@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="headerController">
 	<div class="row">
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 		<img id="logo" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/sellogo.jpg">
@@ -38,9 +38,9 @@
 	</nav>	
 	<form>
 	  <div class="input-group">
-	   <input type="search" class="form-control" id="search" placeholder="Område">
+	   <input type="search" class="form-control" id="search" placeholder="Område" ng-model="searchWord">
 	   	<span class="input-group-btn">
-	    	<button class="btn btn-default" type="button">Sök</button>
+	    	<button class="btn btn-default" type="button" ng-click="hittePou();">Sök</button>
 	   	</span>
 		</div>
 	</form>
