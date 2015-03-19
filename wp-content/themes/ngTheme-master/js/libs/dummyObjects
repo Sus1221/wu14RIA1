@@ -1,0 +1,54 @@
+//An array of dummy objects
+
+var objectArr = [
+
+{
+"Facts" : {
+"asking-price": "1 000 000",
+"building-year": "1974",
+"object-type": "appartment",
+"rooms": "4",
+"area": "98",
+"biarea": "0",
+"running-costs": "1254",
+"adress:" : "Allégatan 5",
+"city": "Lund",
+"municipality": "Lund",
+"heading": "Funkistrea med potensial för lilla familjen"
+},
+"Media": [
+"imgs/img1.jpeg", "imgs/img2.jpeg", "imgs/img3.jpeg"
+]
+}
+
+{
+"Facts" : {
+"asking-price": "1 000 000",
+"building-year": "1974",
+"object-type": "appartment",
+"rooms": "4",
+"area": "98",
+"biarea": "0",
+"running-costs": "1254",
+"adress:" : "Allégatan 5",
+"city": "Lund",
+"municipality": "Lund",
+"heading": "Funkistrea med potensial för lilla familjen"
+},
+"Media": [
+"imgs/img1.jpeg", "imgs/img2.jpeg", "imgs/img3.jpeg"
+]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+]

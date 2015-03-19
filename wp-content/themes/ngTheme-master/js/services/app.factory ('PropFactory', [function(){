@@ -1,7 +1,0 @@
-app.factory ('PropFactory', [function(){
-	var PropProduct = {};
-
-
-
-	return PropProduct;
-}]);

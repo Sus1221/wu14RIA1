@@ -3,13 +3,7 @@
 
 app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", function($scope, Pages, $sce, PropFactory) {
   console.log("homeController alive!");
-  PropFactory.Hello('Hugo');
-  PropFactory.surpriseMe();
-  PropFactory.surpriseMe();
-  PropFactory.surpriseMe();
-  console.log("some: ", PropFactory.some);
-  PropFactory.some = true;
-  console.log("some: ", PropFactory.some);
+  
 
   
 
@@ -30,7 +24,7 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", func
       this is done using the $sce service on the HTML string in JS
       and the ng-bind-html directive in the view
     */
-    $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
+    //$scope.trustedHtml = $sce.trustAsHtml(data[0].content);
   });
   
 }]);
