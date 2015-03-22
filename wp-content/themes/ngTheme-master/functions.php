@@ -13,7 +13,6 @@ define(THEME_FILE_ROOT, trailingslashit($themeDir));
 define(THEME_HTTP_ROOT, trailingslashit(get_template_directory_uri()));
 
 
-
 /**
  * Register the required stylesheets for this theme.
  *
@@ -29,7 +28,7 @@ function ngThemes_stylesheets()
 }
 
 add_action( 'wp_enqueue_scripts', 'ngThemes_stylesheets' );
-
+remove_action('template_redirect', 'redirect_canonical');
 
 
 /**
