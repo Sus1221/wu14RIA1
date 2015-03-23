@@ -4,6 +4,8 @@
 app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", function($scope, Pages, $sce, PropFactory) {
   console.log("homeController alive!");
 
+  PropFactory.find();
+
   //get all pages
   Pages.get();
 

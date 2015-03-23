@@ -6,7 +6,7 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
   var propertyServant = {
   	find : function(searchParams){
   		searchParams = searchParams ? searchParams : {};
-
+      console.log("testar nu då");
   	//Söker efter posts med kategorin "fastigheter"	
   		var callUrl = "/posts?filter[category_name]=fastigheter";
 
@@ -26,8 +26,8 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
 
       		var searchResult = [];
 
-      		
-      		postData.forEach(function(post, i) {console.log(i, post, postData.length)
+      		postData.forEach(function(post, i) {
+            console.log(i, post, postData.length);
       			//last visar om vi är på den sista i loopen
       			var last = i ===postData.length-1;
             console.log("Last ", last);
@@ -41,7 +41,6 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
           	var propertyTag = post.terms.proptaxonomy[0].slug;
           	var mediaCallUrl = "/media?filter[proptaxonomy]="+propertyTag;
 
-            (function(){
               var lastInner = last, innerI = i;
             	WPRest.restCall(mediaCallUrl, "GET", {}, {
             		//this broadcast is VERY important
@@ -65,27 +64,12 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
                   }
                 }
               });
-            })();
-
-          	
-
-
-
       		});
-
       	}
-
-
       });
-
       console.log("Property find method will now call REST url: ", callUrl);
-
   	}
-
   };
- 
- 
   //and return our object
-
   return propertyServant;
 }]);
