@@ -26,32 +26,48 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
 
       		var searchResult = [];
 
-      		var i = 0;
-      		postData.forEach(function(post) {
+      		
+      		postData.forEach(function(post, i) {console.log(i, post, postData.length)
       			//last visar om vi är på den sista i loopen
       			var last = i ===postData.length-1;
+            console.log("Last ", last);
 
-      			if (!post.terms.proptaxonomy) { return;}
+      			if (!post.terms.proptaxonomy) {console.log("Kicking da early return!") ;return;}
 
       			post.excerpt = $sce.trustAsHtml(post.excerpt);
-            	post.content = $sce.trustAsHtml(post.content);
+            post.content = $sce.trustAsHtml(post.content);
 
             	
-            	var propertyTag = post.terms.proptaxonomy[0].slug;
-            	var mediaCallUrl = "/media?filter[proptaxonomy]="+propertyTag;
+          	var propertyTag = post.terms.proptaxonomy[0].slug;
+          	var mediaCallUrl = "/media?filter[proptaxonomy]="+propertyTag;
 
+            (function(){
+              var lastInner = last, innerI = i;
             	WPRest.restCall(mediaCallUrl, "GET", {}, {
             		//this broadcast is VERY important
-	              broadcastName: last ? "foundProperty" : "notDone", 
-	              callback: function(mediaData) {
-	                //callback is triggered when we get data but 
-	                //BEFORE we broadcast data throughout the app	 
-	                //just log data
-	                console.log("Property found property media: ", mediaData); 
-	              }
-	            });
+                broadcastName: last ? "foundProperty" : "notDone", 
+                callback: function(mediaData) {
+                  //callback is triggered when we get data but 
+                  //BEFORE we broadcast data throughout the app	 
+                  //just log data
+                  console.log("Property found property media: ", mediaData); 
 
-            	i++;
+                  searchResult.push({
+                    "media": mediaData,
+                    "base_post": post,
+                    "facts": post.property_data
+                  });
+                  console.log("Last2 ", lastInner, i);
+                  if(lastInner){
+                    console.log("Detta är vårat innehåll i searchResult: ", searchResult);
+                    return searchResult;
+
+                  }
+                }
+              });
+            })();
+
+          	
 
 
 
