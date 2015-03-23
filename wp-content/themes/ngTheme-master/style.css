@@ -6554,12 +6554,28 @@ button.close {
 
 /* -------------------- Begin SELLFORCE! -------------------- */
 
+.inline_block {
+	display: inline-block;
+}
+
+.inline_block h1, h2, h3{
+	margin-left: 3px;
+}
+
 #logo {
 	width: 100%;
 }
 
 #about-img {
 	width:100%;
+}
+
+.fifty_img {
+width: 50%
+}
+
+.hundred_img {
+	width: 100%;
 }
 
 /* -- Home / Front page */
