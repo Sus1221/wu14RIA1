@@ -6566,37 +6566,43 @@ button.close {
 	width: 100%;
 }
 
-#about-img {
-	width:100%;
-}
-
 .fifty_img {
-width: 50%
+width: 50%;
 }
 
 .hundred_img {
 	width: 100%;
 }
 
-/* -- Home / Front page */
+.fifty_row {
+	height: 50%;
+}
+
+/* ++++ Home / Front page */
 
 	/* Six boxes in two rows /*
 
-/* -- Search result, galleryesque listing of objects */
+/* ++++ Search result, galleryesque listing of objects */
 
 	/* Object listing, each object in a row of three boxes /*
 
-/* -- Single object display - all info about an object */
+/* ++++ Single object display - all info about an object */
 
-	/* Jumbo/slider with images */
+	/* BIG image */
+	
+	.big_image {
+		display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 	/* Object info below the jumbo */
 
-/* -- About us * /
+
+
+/* ++++ About us * /
 
 	/* Jumbo */
-
-
 
 	/* Two boxes side by side */
 
@@ -6605,6 +6611,10 @@ width: 50%
 	img.thumbnail {
 		width: 96%;
 	}
+
+	.about-img {
+	width:100%;
+}
 
 
 /* Sticky footer */
