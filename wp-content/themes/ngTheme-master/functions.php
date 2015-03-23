@@ -237,19 +237,7 @@ add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
 /* REST */
 
     add_filter( 'json_prepare_post', function ($data, $post, $context) {
-    /*
-    Custom field names (created with Advanced Custom Fields plugin)
-    town
-    region
-    asking_price
-    monthly_fee
-    area_m2
-    rooms
-    floor
-    elevator
-    balcony
-    property_type
-    */
+   
     //add a new property to the data that is going to AngularJS,
     //and fill it with our metadata
     $data['property_data'] = array(
@@ -276,3 +264,4 @@ add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
       array_push($wp->public_query_vars, 'meta_value');
     }
     add_action("init", "addMetaDataSearch");
+    remove_action('template_redirect', 'redirect_canonical');
