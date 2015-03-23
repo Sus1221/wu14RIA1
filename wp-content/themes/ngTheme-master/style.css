@@ -6552,10 +6552,44 @@ button.close {
   border-radius: 4px;
 }
 
+/* -------------------- Begin SELLFORCE! -------------------- */
+
 #logo {
 	width: 100%;
-
 }
+
+#about-img {
+	width:100%;
+}
+
+/* -- Home / Front page */
+
+	/* Six boxes in two rows /*
+
+/* -- Search result, galleryesque listing of objects */
+
+	/* Object listing, each object in a row of three boxes /*
+
+/* -- Single object display - all info about an object */
+
+	/* Jumbo/slider with images */
+
+	/* Object info below the jumbo */
+
+/* -- About us * /
+
+	/* Jumbo */
+
+
+
+	/* Two boxes side by side */
+
+	/* Two images to the left, vertically */ 
+
+	img.thumbnail {
+		width: 96%;
+	}
+
 
 /* Sticky footer */
 html,
@@ -6577,4 +6611,14 @@ main:after {
 }
 footer {
   background: #BBB;
+}
+
+footer .jumbotron {
+	margin-bottom: 0;
+}
+
+#footer-img {
+	width: 100%;
+	height: 100px;
+
 }
