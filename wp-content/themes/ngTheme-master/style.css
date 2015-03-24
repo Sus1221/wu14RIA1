@@ -6554,11 +6554,16 @@ button.close {
 
 /* -------------------- Begin SELLFORCE! -------------------- */
 
+.filterbox {
+	display: inline-block;
+	
+}
+
 .inline_block {
 	display: inline-block;
 }
 
-.inline_block h1, h2, h3{
+.inline_block h1, h2, h3 {
 	margin-left: 3px;
 }
 
