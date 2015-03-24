@@ -61,7 +61,6 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
                   if(lastInner){
                     console.log("Detta är vårat innehåll i searchResult: ", searchResult);
                     return searchResult;
-
                   }
                 }
               });
