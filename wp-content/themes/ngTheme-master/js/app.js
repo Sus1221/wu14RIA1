@@ -10,7 +10,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
     })
     .when("/searchresult", {
       templateUrl: SITE_INFO.partials+"views/searchresult.html",
-      controller: "searchController"
+      controller: "propertyController"
     })
     .otherwise({
       redirectTo: "/"
