@@ -237,22 +237,22 @@ add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
 /* REST */
 
     add_filter( 'json_prepare_post', function ($data, $post, $context) {
-   
-    //add a new property to the data that is going to AngularJS,
-    //and fill it with our metadata
-    $data['property_data'] = array(
-    'city' => get_post_meta( $post['ID'], 'city', true ),
-    'municipality' => get_post_meta( $post['ID'], 'municipality', true ),
-    'asking_price' => get_post_meta( $post['ID'], 'asking_price', true ),
-    'running-costs' => get_post_meta( $post['ID'], 'running-costs', true ),
-    'area' => get_post_meta( $post['ID'], 'area', true ),
-    'rooms' => get_post_meta( $post['ID'], 'rooms', true ),
-    'biarea' => get_post_meta( $post['ID'], 'biarea', true ),
-    'building-year' => get_post_meta( $post['ID'], 'building-year', true ),
-    'object-type' => get_post_meta( $post['ID'], 'object-type', true ),
-    'adress' => get_post_meta( $post['ID'], 'adress', true ),
-    );
-    return $data;
+     
+      //add a new property to the data that is going to AngularJS,
+      //and fill it with our metadata
+      $data['property_data'] = array(
+        'city' => get_post_meta( $post['ID'], 'city', true ),
+        'municipality' => get_post_meta( $post['ID'], 'municipality', true ),
+        'asking_price' => get_post_meta( $post['ID'], 'asking_price', true ),
+        'running-costs' => get_post_meta( $post['ID'], 'running-costs', true ),
+        'area' => get_post_meta( $post['ID'], 'area', true ),
+        'rooms' => get_post_meta( $post['ID'], 'rooms', true ),
+        'biarea' => get_post_meta( $post['ID'], 'biarea', true ),
+        'building-year' => get_post_meta( $post['ID'], 'building-year', true ),
+        'type-of-object' => get_post_meta( $post['ID'], 'type-of-object', true ),
+        'adress' => get_post_meta( $post['ID'], 'adress', true ),
+        );
+      return $data;
     }, 10, 3 );
 
     //add support for meta data queries when not logged in
