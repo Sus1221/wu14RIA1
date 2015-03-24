@@ -6,7 +6,7 @@ app.controller("headerController", ["$scope", "$location", "SITE_INFO", "PropFac
 
   $scope.search = function() {
 
-	Property.find({s: $scope.searchWord});
+	PropFactory.find({s: $scope.searchWord});
   };
 
    //Property.find();
