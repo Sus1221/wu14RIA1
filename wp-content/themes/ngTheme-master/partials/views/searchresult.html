@@ -6,16 +6,14 @@
 	      <img class="hundred_img" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/stuga2.jpg">
       </div>
     </div>
-    	<div class="col-sm-4 col-md-3 col-lg-3">
-			  <p>Titel</p>
-	    	<p>Pris</p>
-	    	<p>Relevant info</p>
-	    	<p>Driftskostnad</p>
-	    	<p>Yta</p>
-	    	<p>Årsförbrukning</p>
-		  </div>
-    <div class="col-sm-4 col-md-3 col-lg-3">
-	    <p>My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is.</p>
+    	<div class="col-sm-4 col-md-4 col-lg-4" ng-repeat="property in property">
+			<p>{{property.base_post.title}}</p>
+	    	<p>Pris: {{property.facts.asking-price}}</p>
+	    	<p>Driftskostnad: {{property.facts.running-consts}}</p>
+	    	<p>Yta: {{property.facts.area}}</p>
+		 </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+	    <p>My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. You understand? Hey, look at me when I'm talking to you, motherfucker. </p>
     </div>
 <!-- Filterbox
 			<div class="col-sm-4 col-md-3 col-lg-3 filterbox">
