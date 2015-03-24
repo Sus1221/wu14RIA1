@@ -7,7 +7,7 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", func
   PropFactory.find();
 
   //get all pages
-  Pages.get();
+  //Pages.get();
 
   // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
   //listening for the "gotPageData" broadcast on $http success
