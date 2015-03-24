@@ -10,6 +10,6 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", f
       console.log("No data ");
       return;
     }
-    $scope.property = data;
+    $scope.properties = data;
   });
 }]);
