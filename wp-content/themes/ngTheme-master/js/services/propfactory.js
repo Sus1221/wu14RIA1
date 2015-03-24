@@ -6,28 +6,29 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
   var propertyServant = {
   	find : function(searchParams){
   		searchParams = searchParams ? searchParams : {};
-      console.log("testar nu då");
+    //console.log("testar nu då");
   	//Söker efter posts med kategorin "fastigheter"	
   		var callUrl = "/posts?filter[category_name]=fastigheter";
 
   	//build a REST callUrl from search params, 
-     /* for (var i in searchParams) {
-        searchParams object keys are filter keys, 
-        searchParams object values are filter values
+      for (var i in searchParams) {
+        //searchParams object keys are filter keys, 
+        //searchParams object values are filter values
         callUrl += "&filter["+i+"]="+searchParams[i];
       }
-      */
+      
 
       WPRest.restCall(callUrl, "GET", {}, {
       	broadcastName: "notImportant",
       	callback: function(postData){
+
 
       		console.log("Vi har hittat poster: ", postData);
 
       		var searchResult = [];
 
       		postData.forEach(function(post, i) {
-            console.log(i, post, postData.length);
+            //console.log(i, post, postData.length);
       			//last visar om vi är på den sista i loopen
       			var last = i ===postData.length-1;
             console.log("Last ", last);
