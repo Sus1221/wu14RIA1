@@ -3,10 +3,15 @@ app.controller("headerController", ["$scope", "$location", "SITE_INFO", "PropFac
   console.log("headerController is alive!");
   $scope.partialDir = SITE_INFO.partials;
 
+  //hugos exempel på fortsatt utveckling av vad som händer när man klickar på meny-item
+  $scope.goTo = function(path) {
+	$location.url(path);
+  };
 
   $scope.search = function() {
-
-	PropFactory.find({s: $scope.searchWord});
+	//change location.url to include our searchword
+	//this makes the right controller run
+	$location.url("/searchresult?s=" + $scope.searchWord);
 
   };
 

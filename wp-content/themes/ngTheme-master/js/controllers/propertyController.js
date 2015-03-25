@@ -1,6 +1,6 @@
 app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", function($scope, PropFactory, $routeParams) {
   console.log("propertyController is alive! params: ", $routeParams);
- 
+  
   PropFactory.find($routeParams);
  
   //broadcast is coming from Property factory 
