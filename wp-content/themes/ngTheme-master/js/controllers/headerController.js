@@ -3,7 +3,7 @@ app.controller("headerController", ["$scope", "$location", "SITE_INFO", "PropFac
   console.log("headerController is alive!");
   $scope.partialDir = SITE_INFO.partials;
 
-  //hugos exempel på fortsatt utveckling av vad som händer när man klickar på meny-item
+  //path to go to is sent in and then executed in this function
   $scope.goTo = function(path) {
 	$location.url(path);
   };
