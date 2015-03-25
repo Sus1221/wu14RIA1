@@ -1,45 +1,47 @@
-<section class="container" style="max-width: 970px;">
-<h3>Search results</h3>
-	<div class="row" ng-repeat="property in properties">
-	  <div class="col-sm-4 col-md-4 col-lg-4">
-	    <div class="thumbnail">
-	      <img ng-src="{{property.media[0].source}}" class="hundred_img">
+<section class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-12" ng-repeat="property in properties">
+          <div class="thumbnail col-sm-4 col-md-4 col-lg-4">
+	      		<img ng-src="{{property.media[0].source}}" class="hundred_img">
+      		</div>
+      		<div class="col-sm-4 col-md-4 col-lg-4">
+					  <p>{{property.base_post.title}}</p>
+			    	<p>Pris: {{property.facts.asking_price}}</p>
+			    	<p>Driftskostnad: {{property.facts.running_costs}}</p>
+			    	<p>Yta: {{property.facts.area}}</p>
+				  </div>
+				  <div class="col-sm-4 col-md-4 col-lg-4">
+				  	<p><!-- {{property.base_post.excerpt}} -->post.excerpt</p>
+				  </div>
+        </div>
       </div>
     </div>
-    	<div class="col-sm-4 col-md-4 col-lg-4">
-			  <p>{{property.base_post.title}}</p>
-	    	<p>Pris: {{property.facts.asking_price}}</p>
-	    	<p>Driftskostnad: {{property.facts.running_costs}}</p>
-	    	<p>Yta: {{property.facts.area}}</p>
-		  </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-	    <p><!-- {{property.base_post.excerpt}} --></p>
+    <div class="col-sm-4 other">
+      <div class="col-sm-12 col-md-12 col-lg-12 filterbox">
+	  		<h3>Filterbox</h3>
+		    <form role="form">
+			    <div class="checkbox">
+			      <label><input type="checkbox" value="">Option 1</label>
+			    </div>
+			    <div class="checkbox">
+			      <label><input type="checkbox" value="">Option 2</label>
+			    </div>
+			    <div class="checkbox">
+			      <label><input type="checkbox" value="">Option 3</label>
+			    </div>
+			    <div class="checkbox">
+			      <label><input type="checkbox" value="">Option 4</label>
+			    </div>
+			    <div class="checkbox">
+			      <label><input type="checkbox" value="">Option 5</label>
+			    </div>
+			  </form>
+			</div>
     </div>
   </div>
-
-  	<!-- Filterbox
-			<div class="col-sm-4 col-md-3 col-lg-3 filterbox">
-  		<h3>Filterbox</h3>
-	    <form role="form">
-		    <div class="checkbox">
-		      <label><input type="checkbox" value="">Option 1</label>
-		    </div>
-		    <div class="checkbox">
-		      <label><input type="checkbox" value="">Option 2</label>
-		    </div>
-		    <div class="checkbox">
-		      <label><input type="checkbox" value="">Option 3</label>
-		    </div>
-		    <div class="checkbox">
-		      <label><input type="checkbox" value="">Option 4</label>
-		    </div>
-		    <div class="checkbox">
-		      <label><input type="checkbox" value="">Option 5</label>
-		    </div>
-		  </form>
-		</div>
-						-->
-
+</section>
 
   <!-- 
     here we output the html that we have told Angular to trust
@@ -47,3 +49,8 @@
   -->
   <div class="row" ng-bind-html="trustedHtml"></div>
 </section>
+
+
+
+
+
