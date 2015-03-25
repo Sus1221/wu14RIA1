@@ -1,20 +1,23 @@
-<section class="container">
+<section class="container" style="max-width: 970px;">
 <h3>Search results</h3>
-	<div class="row">
-	  <div class="col-sm-4 col-md-3 col-lg-3">	    
+	<div class="row" ng-repeat="property in properties">
+	  <div class="col-sm-4 col-md-4 col-lg-4">
+	    <div class="thumbnail">
+	      <img ng-src="{{property.media[0].source}}" class="hundred_img">
+      </div>
     </div>
-    	<div class="col-sm-4 col-md-4 col-lg-4" ng-repeat="property in properties">
-			<div class="thumbnail">
-	    		<img ng-src="{{property.media[0].source}}" class="hundred_img">
-    		</div>
-			<p>{{property.base_post.title}}</p>
-	    	<p>Pris: {{property.facts.asking_price}}</p>
-	    	<p>Driftskostnad: {{property.facts.running_costs}}</p>
+    	<div class="col-sm-4 col-md-4 col-lg-4">
+			  <p>{{property.base_post.title}}</p>
+	    	<p>Pris: {{property.facts.asking-price}}</p>
+	    	<p>Driftskostnad: {{property.facts.running-costs}}</p>
 	    	<p>Yta: {{property.facts.area}}</p>
-	    	<p><!-- {{property.base_post.excerpt}} --></p>
-	    	<hr>
-		</div>
-<!-- Filterbox
+		  </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+	    <p><!-- {{property.base_post.excerpt}} --></p>
+    </div>
+  </div>
+
+  	<!-- Filterbox
 			<div class="col-sm-4 col-md-3 col-lg-3 filterbox">
   		<h3>Filterbox</h3>
 	    <form role="form">
@@ -37,8 +40,6 @@
 		</div>
 						-->
 
-  </div>
-  
 
   <!-- 
     here we output the html that we have told Angular to trust
