@@ -244,12 +244,12 @@ add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
         'city' => get_post_meta( $post['ID'], 'city', true ),
         'municipality' => get_post_meta( $post['ID'], 'municipality', true ),
         'asking_price' => get_post_meta( $post['ID'], 'asking_price', true ),
-        'running-costs' => get_post_meta( $post['ID'], 'running-costs', true ),
+        'running_costs' => get_post_meta( $post['ID'], 'running_costs', true ),
         'area' => get_post_meta( $post['ID'], 'area', true ),
         'rooms' => get_post_meta( $post['ID'], 'rooms', true ),
         'biarea' => get_post_meta( $post['ID'], 'biarea', true ),
-        'building-year' => get_post_meta( $post['ID'], 'building-year', true ),
-        'type-of-object' => get_post_meta( $post['ID'], 'type-of-object', true ),
+        'building_year' => get_post_meta( $post['ID'], 'building_year', true ),
+        'type_of_object' => get_post_meta( $post['ID'], 'type_of_object', true ),
         'adress' => get_post_meta( $post['ID'], 'adress', true ),
         );
       return $data;
