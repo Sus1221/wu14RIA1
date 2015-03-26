@@ -1,19 +1,37 @@
 <section class="container">
 	<h3>Single property - all info</h3>
-	<div class="row fityrow">
-		<div class="col-xs-12 col-md-12 col-lg-12">
+	<div class="row">
+		<div class="col-xs-12 col-md-12 col-lg-12 singleprop_img_div">
 			<img class="big_image" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/renovering.jpg">
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-6 col-md-6 col-lg-6">
-		
+		<div class="col-xs-0 col-sm-0 col-md-1 col-lg-2 buffer2">
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 middle8" >
+			<div class="row">
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 inner8">
+					<h3>Object name {{property.base_post.title}}</h3>
+				</div>
+				<div class="col-xs-4 col-md-4 col-lg-4 inner4">
+					<h3 class="pull-right">Some info</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 inner8">
+					{{property.base_post.content}}
+					Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? 
+				</div>
+				<div class="col-xs-4 col-md-4 col-lg-4 inner4">
+					<p>Pris: {{property.facts.asking_price}}</p>
+			    <p>Driftskostnad: {{property.facts.running_costs}}</p>
+			    <p>Yta: {{property.facts.area}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-0 col-sm-0 col-md-1 col-lg-2 buffer2">
 		</div>
 	</div>
-
- 
-  
-
   <!-- 
     here we output the html that we have told Angular to trust
     using $sce.trustAsHtml. We cannot use {{}} for HTML strings 
