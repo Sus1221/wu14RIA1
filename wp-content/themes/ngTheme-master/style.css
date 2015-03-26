@@ -6554,6 +6554,11 @@ button.close {
 
 /* -------------------- Begin SELLFORCE! -------------------- */
 
+#customSocialMediaLinks {
+  color: black;
+  font-size: 40px;
+}
+
 .filterbox {
 	display: inline-block;
 }

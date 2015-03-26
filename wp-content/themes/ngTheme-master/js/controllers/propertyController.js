@@ -1,4 +1,4 @@
-app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", function($scope, PropFactory, $routeParams) {
+app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "$location", function($scope, PropFactory, $routeParams, $location) {
   console.log("propertyController is alive! params: ", $routeParams);
   
   PropFactory.find($routeParams);
@@ -12,4 +12,9 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", f
     }
     $scope.properties = data;
   });
+
+  $scope.showSingleProp = function(path) {
+    console.log("showSingleProp path inparameter", path);
+    $location.url("/singleprop/"+path);
+  };
 }]);
