@@ -256,7 +256,8 @@ add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
     }, 10, 3 );
 
     //add support for meta data queries when not logged in
-    function addMetaDataSearch() {
+    //Ska utkommenteras efter Hugos anvisningar
+    /*function addMetaDataSearch() {
       global $wp;
      
       // Add additional key to support.
@@ -264,4 +265,4 @@ add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
       array_push($wp->public_query_vars, 'meta_value');
     }
     add_action("init", "addMetaDataSearch");
-    remove_action('template_redirect', 'redirect_canonical');
+    remove_action('template_redirect', 'redirect_canonical');*/

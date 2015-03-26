@@ -6,15 +6,24 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
   var propertyServant = {
   	find : function(searchParams){
   		searchParams = searchParams ? searchParams : {};
-    //console.log("testar nu då");
-  	//Söker efter posts med kategorin "fastigheter"	
-  		var callUrl = "/posts?filter[category_name]=fastigheter";
 
   	//build a REST callUrl from search params, 
+      
+      //New loop
+      //from Property factory "find" method:
+      var callUrl = "/posts?filter[category_name]=fastigheter";
+
+      //build a REST callUrl from search params, 
       for (var i in searchParams) {
         //searchParams object keys are filter keys, 
         //searchParams object values are filter values
-        callUrl += "&filter["+i+"]="+searchParams[i];
+        if (searchParams[i].constructor.name != "Object") {
+          callUrl += "&filter["+i+"]="+searchParams[i];
+        } else {
+          for (var j in searchParams[i]) {
+            callUrl += "&filter["+i+"]["+j+"]="+searchParams[i][j];
+          }
+        }
       }
       
 
@@ -33,7 +42,7 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
       			var last = i ===postData.length-1;
             console.log("Last ", last);
 
-      			if (!post.terms.proptaxonomy) {console.log("Kicking da early return!") ;return;}
+      			if (!post.terms.proptaxonomy) {console.log("Kicking da early return!") ;i++; return;}
 
       			post.excerpt = $sce.trustAsHtml(post.excerpt);
             post.content = $sce.trustAsHtml(post.content);
