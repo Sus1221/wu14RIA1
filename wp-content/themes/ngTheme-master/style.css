@@ -6578,9 +6578,6 @@ width: 50%;
 	width: 100%;
 }
 
-.fifty_row {
-	height: 50%;
-}
 
 /* ++++ Home / Front page */
 
@@ -6594,6 +6591,10 @@ width: 50%;
 
 	/* BIG image */
 	
+.singleprop_img_div {
+	overflow: hidden;
+}
+
 	.big_image {
 		display: block;
     margin-left: auto;
@@ -6618,6 +6619,24 @@ width: 50%;
 
 	.about-img {
 	width:100%;
+}
+
+/* ++++ dev layout single prop */
+
+.buffer2 {
+	background-color: ;
+}
+
+.middle8 {
+	background-color: ;
+}
+
+.inner8 {
+	background-color: ;
+}
+
+.inner4 {
+	background-color: ;
 }
 
 /* Sticky footer */
