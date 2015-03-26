@@ -15,6 +15,7 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
 
   $scope.showSingleProp = function(path) {
     console.log("showSingleProp path inparameter", path);
-    $location.url("/singleprop/"+path);
+    $location.url("/singleprop?filter[name]="+path);
+
   };
 }]);
