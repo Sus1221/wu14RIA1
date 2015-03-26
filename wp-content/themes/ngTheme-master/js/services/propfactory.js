@@ -33,7 +33,7 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
       			var last = i ===postData.length-1;
             console.log("Last ", last);
 
-      			if (!post.terms.proptaxonomy) {console.log("Kicking da early return!") ;return;}
+      			if (!post.terms.proptaxonomy) {console.log("Kicking da early return!") ; i++; return;}
 
       			post.excerpt = $sce.trustAsHtml(post.excerpt);
             post.content = $sce.trustAsHtml(post.content);
