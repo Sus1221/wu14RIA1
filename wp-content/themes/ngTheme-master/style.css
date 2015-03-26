@@ -6555,6 +6555,10 @@ button.close {
 /* -------------------- Begin SELLFORCE! -------------------- */
 
 #customSocialMediaLinks {
+  margin-top: 5vh;
+}
+
+#customSocialMediaLinks a i {
   color: black;
   font-size: 40px;
 }
