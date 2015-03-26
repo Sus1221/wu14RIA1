@@ -6590,11 +6590,14 @@ width: 50%;
 
 /* ++++ Home / Front page */
 
-	/* Six boxes in two rows /*
+	/* Six boxes in two rows */
 
 /* ++++ Search result, galleryesque listing of objects */
 
-	/* Object listing, each object in a row of three boxes /*
+	/* Object listing, each object in a row of three boxes*/
+  .thumbnail img:hover {
+    cursor: pointer;
+  }
 
 /* ++++ Single object display - all info about an object */
 
