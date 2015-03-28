@@ -1,5 +1,4 @@
 <section class="container">
-	<h3>Single property - all info</h3>
 	<div class="row">
 		<div class="col-xs-12 col-md-12 col-lg-12 singleprop_img_div">
 			<img class="big_image" ng-src="{{properties[0].media[0].source}}">
@@ -11,10 +10,10 @@
 		<div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 middle8" >
 			<div class="row">
 				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 inner8">
-					<h3>Object name: {{properties[0].base_post.title}}</h3>
+					<h3>{{properties[0].base_post.title}}</h3>
 				</div>
 				<div class="col-xs-4 col-md-4 col-lg-4 inner4">
-					<h3 class="pull-right">Some info</h3>
+					<h3 class="pull-right">Snabbfakta</h3>
 				</div>
 			</div>
 			<div class="row">
@@ -22,20 +21,21 @@
 					{{properties[0].base_post.content}}
 				</div>
 				<div class="col-xs-4 col-md-4 col-lg-4 inner4">
-				<p>Pris: {{properties[0].facts.asking_price}}</p>
-			    <p>Driftskostnad: {{properties[0].facts.running_costs}}</p>
-			    <p>Yta: {{properties[0].facts.area}}</p>
+				<p>Pris: {{properties[0].facts.asking_price}} kr.</p>
+			    <p>Driftskostnad: {{properties[0].facts.running_costs}} kr/mån.</p>
+			    <p>Yta: {{properties[0].facts.area}} kvadratmeter.</p>
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-0 col-sm-0 col-md-1 col-lg-2 buffer2">
 		</div>
 	</div>
-	<div class="row">
+	<!--Here maybe we want to ng-repeat all pictures belonging to a property -->
+	<!-- <div class="row" ng-repeat="picture in properties[0].media">
 		<div class="col-xs-12 col-md-12 col-lg-12 singleprop_img_div">
-			<img class="big_image" ng-src="{{properties[0].media[0].source}}">
+			<img class="big_image" ng-src="{{picture.source}}">
 		</div>
-	</div>
+	</div> -->
   <!-- 
     here we output the html that we have told Angular to trust
     using $sce.trustAsHtml. We cannot use {{}} for HTML strings 

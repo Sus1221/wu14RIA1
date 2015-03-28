@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-sm-12" ng-repeat="property in properties">
           <div class="thumbnail col-sm-4 col-md-4 col-lg-4">
-	      		<img ng-click="showSingleProp(property.base_post.name);" ng-src="{{property.media[0].source}}" class="hundred_img">
+	      		<img ng-click="showSingleProp(property.base_post.slug);" ng-src="{{property.media[0].source}}" class="hundred_img">
       		</div>
       		<div class="col-sm-4 col-md-4 col-lg-4">
 					<p>{{property.base_post.title}}</p>
