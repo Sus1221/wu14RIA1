@@ -11,6 +11,7 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
       return;
     }
     $scope.properties = data;
+    console.log("$scope.properties: ", $scope.properties);
   });
 
   $scope.showSingleProp = function(name) {
