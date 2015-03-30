@@ -1,4 +1,3 @@
-
 //a "core" service that handles all rest calls to WordPress
 app.service("WPRest", ["$http", "$rootScope", "SITE_INFO", "API_ROUTE", function($http, $rootScope, SITE_INFO, API_ROUTE) {
   var APIPath = SITE_INFO.http_root + API_ROUTE;

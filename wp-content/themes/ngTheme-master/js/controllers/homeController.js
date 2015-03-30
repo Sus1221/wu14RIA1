@@ -1,27 +1,31 @@
-//"ngTheme" home controller.
-//dependent on $scope && WPService being injected to run
-
+//controller for homeview
 app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", function($scope, Pages, $sce, PropFactory) {
   console.log("homeController alive!");
 
+  //get all properties from PropFactory
   PropFactory.find();
 
+  //get all pages from PageFactory
   Pages.get();
 
-  // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
-  //listening for the "gotPageData" broadcast on $http success
+  
+  //listening for the "gotPageData" broadcast on $http success in propFactory
   $scope.$on("gotPageData", function(event, data) {
     console.log("homeController on gotPageData: ", data);
-    if (data.lenght === 0) {
+    //if no data is recieved
+    if (data.length === 0) {
+      //exit
       return;
     }
+    //put data on $scope
     $scope.pages = data;
     console.log("pages", $scope.pages);
   });
 
-    $scope.showSinglePage = function(pageId) {
-      console.log("showSinglePage name inparameter", pageId);
-      $location.url("/page/" + pageId);
+  $scope.showSinglePage = function(slug) {
+    console.log("showSinglePage name inparameter", slug);
+    //sets url-ending to a single page
+    $location.url("/page/" + slug);
   };
   
 }]);

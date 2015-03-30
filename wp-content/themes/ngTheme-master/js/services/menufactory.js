@@ -1,3 +1,4 @@
+//factory handling menuItems
 app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
   function crtMnuTree (menuLinks) {

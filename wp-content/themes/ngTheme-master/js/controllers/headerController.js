@@ -1,22 +1,25 @@
-//"ngTheme" controller.
+//controller for header
 app.controller("headerController", ["$scope", "$location", "SITE_INFO", "Menus", "PropFactory", function($scope, $location, SITE_INFO, Menus, PropFactory) {
-  $scope.partialDir = SITE_INFO.partials;
+  // $scope.partialDir = SITE_INFO.partials;
   console.log("headerController is alive!");
+  //get menuItems from menufactory.js
   Menus.get(12);
 
   //path to go to is sent in and then executed in this function
   $scope.goTo = function(path) {
-	$location.url(path);
+    $location.url(path);
   };
 
   $scope.search = function() {
-  	//change location.url to include our searchword
-  	//this makes the right controllerrun
+    //change location.url to include our searchword; this makes the right controllerrun
     var locationUrl = "/searchresult";
+    //if a searchWord is found in input field
     if ($scope.searchWord) {
+      //add it as a search parameter to locationUrl
       locationUrl += "?s=" + $scope.searchWord;
     }
-  	$location.url(locationUrl);
+    //set url-ending e.g. go to it
+    $location.url(locationUrl);
 
   };
 
