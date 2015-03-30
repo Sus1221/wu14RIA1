@@ -1,7 +1,7 @@
 <section class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-12 col-lg-12 singleprop_img_div">
-			<img class="big_image" ng-src="{{properties[0].media[0].source}}">
+			<img class="big_image img-responsive" ng-src="{{properties[0].media[0].source}}">
 		</div>
 	</div>
 	<div class="row">
@@ -32,7 +32,7 @@
 	<!--Here maybe we want to ng-repeat all pictures belonging to a property -->
 	<div class="row">
 		<div ng-repeat="picture in properties[0].media" class="col-xs-12 col-md-12 col-lg-12 singleprop_img_div">
-			<img class="big_image" ng-src="{{picture.source}}">
+			<img class="big_image img-responsive" ng-src="{{picture.source}}">
 		</div>
 	</div>
   <!-- 
