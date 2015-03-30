@@ -20,9 +20,16 @@
 				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 inner8" ng-bind-html="properties[0].base_post.content">
 				</div>
 				<div class="col-xs-4 col-md-4 col-lg-4 inner4">
-				<p>Pris: {{properties[0].facts.asking_price}} kr.</p>
-			    <p>Driftskostnad: {{properties[0].facts.running_costs}} kr/mån.</p>
-			    <p>Yta: {{properties[0].facts.area}} kvadratmeter.</p>
+					<p>Typ av objekt: {{properties[0].facts.type_of_object}}</p>
+					<p>Adress: {{properties[0].facts.adress}}</p>
+					<p>Stad: {{properties[0].facts.city}}</p>
+				    <p>Kommun: {{properties[0].facts.municipality}}</p>
+					<p>Utgångspris: {{properties[0].facts.asking_price}} kr.</p>
+				    <p>Driftskostnad: {{properties[0].facts.running_costs}} kr/mån.</p>
+				    <p>Yta: {{properties[0].facts.area}} kvadratmeter.</p>
+				    <p>Biarea: {{properties[0].facts.biarea}}</p>
+				    <p>Antal rum: {{properties[0].facts.rooms}}</p>
+				    <p>Byggår: {{properties[0].facts.building_year}}</p>
 				</div>
 			</div>
 		</div>
