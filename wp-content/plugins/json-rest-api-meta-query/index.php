@@ -33,7 +33,8 @@ function addMetaQuerySupport($data){
   $args['relation'] = 'AND';
 
   foreach ($data as $key=>$value) {
-    $value = urldecode($value);
+    
+    $value = str_replace('\"', '"', $value);
 
       if ( 'relation' === $key ) {
           $args['relation'] = $data['relation'];

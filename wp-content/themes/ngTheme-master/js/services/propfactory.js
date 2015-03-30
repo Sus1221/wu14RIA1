@@ -1,17 +1,21 @@
 app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
-
+  var searchResult = [];
 	//WPRest.restCall("/", "GET", {}, "WPRestWorks");
 	 //factory code will go here...
   //declare our object literal to return already now
   var propertyServant = {
-  	find : function(searchParams){
+  	find : function(searchParams, pageNo, startOver){
   		searchParams = searchParams ? searchParams : {};
+      pageNo = pageNo ? pageNo : 1;
+  	//build a REST callUrl from search params,
 
-  	//build a REST callUrl from search params, 
+      if (startOver || pageNo === 1) {
+        searchResult.length = 0;
+      }
       
       //New loop
       //from Property factory "find" method:
-      var callUrl = "/posts?filter[category_name]=fastigheter";
+      var callUrl = "/posts?page=" + pageNo + "&filter[category_name]=fastigheter";
 
       //build a REST callUrl from search params, 
       for (var i in searchParams) {
@@ -26,6 +30,7 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
         }
       }
       
+      console.log("callUrl: ", callUrl);
 
       WPRest.restCall(callUrl, "GET", {}, {
       	broadcastName: "notImportant",
@@ -34,16 +39,19 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
 
       		console.log("Vi har hittat poster: ", postData);
 
-      		var searchResult = [];
+          for (var i = postData.length - 1; i >= 0; i--) {
+            if (!postData[i].terms.proptaxonomy) {
+              postData.splice(i, 1);
+            }
+          }
+
+      		
 
       		postData.forEach(function(post, i) {
             //console.log(i, post, postData.length);
       			//last visar om vi är på den sista i loopen
       			var last = i ===postData.length-1;
             console.log("Last ", last);
-
-
-      			if (!post.terms.proptaxonomy) {console.log("Kicking da early return!") ; i++; return;}
 
       			post.excerpt = $sce.trustAsHtml(post.excerpt);
             post.content = $sce.trustAsHtml(post.content);

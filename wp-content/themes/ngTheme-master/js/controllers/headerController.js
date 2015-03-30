@@ -9,9 +9,13 @@ app.controller("headerController", ["$scope", "$location", "SITE_INFO", "PropFac
   };
 
   $scope.search = function() {
-	//change location.url to include our searchword
-	//this makes the right controller run
-	$location.url("/searchresult?s=" + $scope.searchWord);
+  	//change location.url to include our searchword
+  	//this makes the right controllerrun
+    var locationUrl = "/searchresult";
+    if ($scope.searchWord) {
+      locationUrl += "?s=" + $scope.searchWord;
+    }
+  	$location.url(locationUrl);
 
   };
 
