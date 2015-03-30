@@ -1,7 +1,8 @@
 //"ngTheme" controller.
-app.controller("headerController", ["$scope", "$location", "SITE_INFO", "PropFactory", function($scope, $location, SITE_INFO, PropFactory) {
-  console.log("headerController is alive!");
+app.controller("headerController", ["$scope", "$location", "SITE_INFO", "Menus", "PropFactory", function($scope, $location, SITE_INFO, Menus, PropFactory) {
   $scope.partialDir = SITE_INFO.partials;
+  console.log("headerController is alive!");
+  Menus.get(12);
 
   //path to go to is sent in and then executed in this function
   $scope.goTo = function(path) {
@@ -18,7 +19,6 @@ app.controller("headerController", ["$scope", "$location", "SITE_INFO", "PropFac
   	$location.url(locationUrl);
 
   };
-
 
   //Property.find();
   console.log("headerController hej!");
