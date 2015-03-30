@@ -6599,6 +6599,11 @@ width: 50%;
     cursor: pointer;
   }
 
+  /*Each object in searchresult.html*/
+  .resultRow {
+    margin: 20px;
+  }
+
 /* ++++ Single object display - all info about an object */
 
 	/* BIG image */
