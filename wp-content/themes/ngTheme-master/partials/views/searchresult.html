@@ -18,18 +18,28 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4 other">
+    <div ng-controller="searchController" class="col-sm-4 other">
       <div class="col-sm-12 col-md-12 col-lg-12 filterbox">
-	  		<h3>Filterbox</h3>
+	  		<h3>Filtrera resultat</h3>
 		    <form role="form">
-			    <div class="checkbox">
-			      <label><input type="checkbox" value="">Option 1</label>
+			    <div class="textbox">
+			      <label>Prisintervall: </br><input type="text" value=""></label>
 			    </div>
-			    <div class="checkbox">
-			      <label><input type="checkbox" value="">Option 2</label>
+			    <div class="textbox">
+			      <label>Stad: </br><input type="text" value=""></label>
 			    </div>
+			    <div class="selectbox">
+			    	<label>Bostadstyp: </br>
+					    <select ng-model="selectedItem">
+				        	<option ng-repeat="item in items" value="{{item}}">{{item}}<option value="">Alla objekt</option>
+				      	</select>
+		      		</label>
+		      	</div>
+
+
+				<!--
 			    <div class="checkbox">
-			      <label><input type="checkbox" value="">Option 3</label>
+			      <label><input type="checkbox" value=""></label>
 			    </div>
 			    <div class="checkbox">
 			      <label><input type="checkbox" value="">Option 4</label>
@@ -37,6 +47,7 @@
 			    <div class="checkbox">
 			      <label><input type="checkbox" value="">Option 5</label>
 			    </div>
+			    <input type="submit" value="Submit"/> -->
 			  </form>
 			</div>
     </div>
