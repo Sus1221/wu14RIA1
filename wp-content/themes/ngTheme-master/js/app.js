@@ -16,6 +16,10 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/singleprop.html",
       controller: "propertyController"
     })
+    .when("/om_oss", {
+      templateUrl: SITE_INFO.partials+"views/about.html",
+      controller: "homeController"
+    })
     .otherwise({
       redirectTo: "/"
     });

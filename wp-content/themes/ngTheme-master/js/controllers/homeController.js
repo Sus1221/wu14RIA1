@@ -6,13 +6,26 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", func
 
   PropFactory.find();
 
-  //get all pages
-  //Pages.get();
+  Pages.get();
 
   // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
   //listening for the "gotPageData" broadcast on $http success
   $scope.$on("gotPageData", function(event, data) {
     console.log("homeController on gotPageData: ", data);
+    if (data.lenght === 0) {
+      return;
+    }
+    $scope.pages = data;
+    console.log("pages", $scope.pages);
+  });
+
+    $scope.showSinglePage = function(pageId) {
+      console.log("showSinglePage name inparameter", pageId);
+      $location.url("/page/" + pageId);
+  };
+  
+}]);
+
 
     /* 
       angular protects us from "dangerous" HTML by converting it to a string
@@ -24,6 +37,3 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", func
       and the ng-bind-html directive in the view
     */
     //$scope.trustedHtml = $sce.trustAsHtml(data[0].content);
-  });
-  
-}]);
