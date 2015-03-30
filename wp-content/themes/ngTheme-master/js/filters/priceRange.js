@@ -1,0 +1,7 @@
+app.filter('priceRange', function(){
+
+
+
+
+	
+})
