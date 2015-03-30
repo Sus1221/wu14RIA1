@@ -17,8 +17,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 inner8">
-					{{properties[0].base_post.content}}
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 inner8" ng-bind-html="properties[0].base_post.content">
 				</div>
 				<div class="col-xs-4 col-md-4 col-lg-4 inner4">
 				<p>Pris: {{properties[0].facts.asking_price}} kr.</p>
@@ -31,11 +30,11 @@
 		</div>
 	</div>
 	<!--Here maybe we want to ng-repeat all pictures belonging to a property -->
-	<!-- <div class="row" ng-repeat="picture in properties[0].media">
-		<div class="col-xs-12 col-md-12 col-lg-12 singleprop_img_div">
+	<div class="row">
+		<div ng-repeat="picture in properties[0].media" class="col-xs-12 col-md-12 col-lg-12 singleprop_img_div">
 			<img class="big_image" ng-src="{{picture.source}}">
 		</div>
-	</div> -->
+	</div>
   <!-- 
     here we output the html that we have told Angular to trust
     using $sce.trustAsHtml. We cannot use {{}} for HTML strings 
