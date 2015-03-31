@@ -6554,6 +6554,9 @@ button.close {
 
 /* -------------------- Begin SELLFORCE! -------------------- */
 
+
+
+
 #customSocialMediaLinks {
   margin-top: 5vh;
 }
@@ -6591,6 +6594,18 @@ width: 50%;
 header {
   margin-bottom: 10px;
 }
+
+/* submenu dropdown positioning (toplevel dropdowns already look great!) */
+.dropdown-menu > .dropdown > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+}
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
 
 /* ++++ Home / Front page */
 

@@ -8,6 +8,14 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/home.html",
       controller: "homeController"
     })
+    .when("/pages/till-salu", {
+      templateUrl: SITE_INFO.partials+"views/searchresult.html",
+      controller: "propertyController"
+    })
+    .when("/pages/:name", {
+      templateUrl: SITE_INFO.partials+"views/page.html",
+      controller: "pageController"
+    })
     //showing table of all earchresults
     .when("/searchresult", {
       templateUrl: SITE_INFO.partials+"views/searchresult.html",

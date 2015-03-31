@@ -3,6 +3,12 @@ app.controller("headerController", ["$scope", "$location", "SITE_INFO", "Menus",
   $scope.partialDir = SITE_INFO.partials;
   console.log("headerController is alive!");
 
+  $scope.isCollapsed = true;
+
+  $scope.collapseNav = function() {
+  	$scope.isCollapsed = !$scope.isCollapsed;
+  }
+
   //get menuItems from menufactory.js
 
   Menus.get(12);
