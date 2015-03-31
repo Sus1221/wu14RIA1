@@ -2,9 +2,14 @@
 app.controller("headerController", ["$scope", "$location", "SITE_INFO", "Menus", "PropFactory", function($scope, $location, SITE_INFO, Menus, PropFactory) {
   // $scope.partialDir = SITE_INFO.partials;
   console.log("headerController is alive!");
-  //get menuItems from menufactory.js
-  Menus.get(12);
 
+  //get menuItems from menufactory.js
+
+  Menus.get(12);
+  $scope.$on("gotMenuLinks", function(event, data){
+  	$scope.menuLinks = data.items;
+
+  })
   //path to go to is sent in and then executed in this function
   $scope.goTo = function(path) {
     $location.url(path);
