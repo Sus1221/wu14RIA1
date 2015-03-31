@@ -27,7 +27,13 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       redirectTo: "/"
     });
 
+
+
   $locationProvider.html5Mode(true);
 }])
 .constant('SITE_INFO', myLocalized)
 .constant('API_ROUTE', "wp-json");
+
+
+//contact
+    var app = angular.module('contactApp', []);
