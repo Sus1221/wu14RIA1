@@ -1,1 +1,1 @@
-app.controller("pageController", ["$scope", "$location", "SITE_INFO", "PropFactory"])
+//app.controller("pageController", ["$scope", "$location", "SITE_INFO", "PropFactory"])

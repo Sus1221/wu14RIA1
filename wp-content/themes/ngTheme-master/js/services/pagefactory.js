@@ -1,10 +1,22 @@
-//our .factory() service for "Pages" rest calls
-app.factory("Pages", ["WPRest", function (WPRest) {
+app.factory("Pages", ["WPRest", "$sce", function (WPRest, $sce) {
   //in a .factory() service object literal syntax is required
   var pageServant = {
     get : function(pageId) {
       var callUrl = pageId ? "/pages/"+pageId : "/pages";
-      WPRest.restCall(callUrl, "GET", {}, "gotPageData");
+      WPRest.restCall(callUrl, "GET", {}, {
+        broadcastName : "gotPageData",
+        callback : function(pageData) {
+            pageData.forEach(function(page, i) {
+
+            page.excerpt = $sce.trustAsHtml(page.excerpt);
+            page.content = $sce.trustAsHtml(page.content);
+  
+          });
+
+        return pageData;
+
+        }
+      });
     },
     post : function(data) {
       var callUrl = "/pages";
@@ -23,3 +35,10 @@ app.factory("Pages", ["WPRest", function (WPRest) {
   //.factory() services MUST return an object
   return pageServant;
 }]);
+           /* 
+         
+            var last = i === pageData.length-1;
+            console.log("last", last);
+           
+           if (!pageId) {console.log("Här händer ngt") ; i++; return;
+           });*/
