@@ -1,5 +1,5 @@
 //controller for homeview
-app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", function($scope, Pages, $sce, PropFactory) {
+app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", "$location", function($scope, Pages, $sce, PropFactory, $location) {
   console.log("homeController alive!");
 
   //get all properties from PropFactory
@@ -45,7 +45,12 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", func
     //PropFactory.find($routeParams, pageNo);
   });
 
-  
+  //Changes url, adds name of one property
+  $scope.showSingleProp = function(name) {
+    console.log("showSingleProp name inparameter", name);
+    $location.url("/singleprop/" + name);
+  };
+
 }]);
 
 

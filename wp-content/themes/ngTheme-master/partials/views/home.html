@@ -1,10 +1,9 @@
 <section class="container">
-	<h3>Home / Front</h3>
 	<div class="row">
 	  <div class="col-sm-6 col-md-4 col-lg-4">
 	    <div class="thumbnail">
 	    	<div class="caption">
-	      	<img class="fifty_img" ng-src="{{properties[0].media[0].source}}">
+	      	<img class="fifty_img" ng-src="{{properties[0].media[0].source}}" ng-click="showSingleProp(properties[0].base_post.slug);">
 	        <h3 class="inline_block">{{properties[0].base_post.title}}</h3>
 	        <p ng-bind-html="properties[0].base_post.excerpt"></p>
 	      </div>
@@ -14,7 +13,7 @@
 	    <div class="thumbnail">
 	      <div class="caption">
 	        <p ng-bind-html="properties[1].base_post.excerpt"></p>
-	        <img class="fifty_img" ng-src="{{properties[1].media[0].source}}">
+	        <img class="fifty_img" ng-src="{{properties[1].media[0].source}}" ng-click="showSingleProp(properties[1].base_post.slug);">
 	        <h3 class="inline_block">{{properties[1].base_post.title}}</h3>
 	      </div>
 	    </div>
@@ -34,7 +33,7 @@
 	  <div class="col-sm-6 col-md-4 col-lg-4">
 	    <div class="thumbnail">
 	    	<div class="caption">
-	      	<img class="fifty_img" ng-src="{{properties[2].media[0].source}}">
+	      	<img class="fifty_img" ng-src="{{properties[2].media[0].source}}" ng-click="showSingleProp(properties[2].base_post.slug);">
 	        <h3 class="inline_block">{{properties[2].base_post.title}}</h3>
 	        <p ng-bind-html="properties[2].base_post.excerpt"></p>
 	      </div>
@@ -44,7 +43,7 @@
 	    <div class="thumbnail">
 	      <div class="caption">
 	       <p ng-bind-html="properties[3].base_post.excerpt"></p>
-	        <img class="fifty_img" ng-src="{{properties[3].media[0].source}}">
+	        <img class="fifty_img" ng-src="{{properties[3].media[0].source}}" ng-click="showSingleProp(properties[3].base_post.slug);">
 	        <h3 class="inline_block">{{properties[3].base_post.title}}</h3>
 	      </div>
 	    </div>
