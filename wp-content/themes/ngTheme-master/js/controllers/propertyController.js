@@ -3,7 +3,18 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
   console.log("propertyController is alive! params: ", $routeParams);
 
   //Array values for selectbox in filterbox
-  $scope.items = ['Villa','Lägenhet','Gård','Tomt'];
+  $scope.propTypes = ['Villa','Lägenhet','Gård','Tomt'];
+  //template filter obj. to fill search parameters with
+  $scope.propFilters = {
+    priceRange: [],
+    propertyType: "",
+    typeRange: {
+      Apartment: true,
+      House: true,
+      Farm: true,
+      Plot: true
+    }
+  };
 
   //var pageNo = 1;
   //get pages according to current url
@@ -14,7 +25,7 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
     console.log("propertyController on foundProperty: ", data);
     //if no data is recieved
     if (data.length === 0) {
-      console.log("No data ");
+      console.log("No data");
       //exit
       return;
     }
