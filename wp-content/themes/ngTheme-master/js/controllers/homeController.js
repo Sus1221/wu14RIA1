@@ -9,7 +9,7 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", func
   Pages.get();
 
   
-  //listening for the "gotPageData" broadcast on $http success in propFactory
+  //listening for the "gotPageData" broadcast on $http success in pageFactory
   $scope.$on("gotPageData", function(event, data) {
     console.log("homeController on gotPageData: ", data);
     //if no data is recieved
@@ -27,6 +27,24 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", func
     //sets url-ending to a single page
     $location.url("/page/" + slug);
   };
+
+  //when propFactory delivers broadcast
+  $scope.$on("foundProperty", function(event, data) {
+    console.log("listening to propfactory broadcast in homeController");
+    //if no data is recieved
+    if (data.length === 0) {
+      console.log("No data");
+      //exit
+      return;
+    }
+    //put recieved data on $scope
+    $scope.properties = data;
+    console.log("$scope.properties: ", $scope.properties);
+
+    //pageNo++; //get next page of results
+    //PropFactory.find($routeParams, pageNo);
+  });
+
   
 }]);
 

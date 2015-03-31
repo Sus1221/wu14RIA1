@@ -4,23 +4,18 @@
 	  <div class="col-sm-6 col-md-4 col-lg-4">
 	    <div class="thumbnail">
 	    	<div class="caption">
-	      	<img class="fifty_img" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/stuga2.jpg">
-	      
-	        <h3 class="inline_block">Hatten Biff!<br>Nästan här</h3>
-	        <p>
-	        On todistettu, että lukijaa häiritsee sivun ulkoasu lukiessaan sivua. Lorem Ipsumin käytön tarkoitus on, että se omaa enemmän-tai-vähemmän normaalimpaa sanojen sijoitusta kuin 'Sisältöä tähän, sisältöä tähän'. Monet tietokoneen julkistusohjelmien pakkaukset ja nettisivueditorit käyttävät nyt Lorem Ipsumia heidän normaalina mallitekstinä. 'Lorem Ipsumia' etsittäessä löytyy monen monta nettisivua, jotka ovat vasta aluillaan. Useita versioita on muodostunut vuosien kuluessa, jotkut vahingossa.	
-	        </p>
+	      	<img class="fifty_img" ng-src="{{properties[0].media[0].source}}">
+	        <h3 class="inline_block">{{properties[0].base_post.title}}</h3>
+	        <p ng-bind-html="properties[0].base_post.excerpt"></p>
 	      </div>
 	    </div>
 	  </div>
 	  <div class="col-sm-6 col-md-4 col-lg-4">
 	    <div class="thumbnail">
 	      <div class="caption">
-	        <p>
-	        	Vastoin yleistä uskomusta, Lorem Ipsum ei ole vain sattumanvarainen teksti. Sillä on pitkät juuret klassisesta latinalaisesta kirjallisuudesta vuonna 45 eKr alkaen, tehden siitä yli 2000 vuotta vanhan. Richard McClintock, latinalainen professori Hampden-Sydneyn yliopistossa Virginiassa, etsi yhden vaikeaselkoisimmista latinalaisista sanoista, consectetur, Lorem Ipsumin kappaleesta ja etsi lainauksia sanasta klassisessa kirjallisuudessa löytäen varman lähteen. 
-	        </p>
-	        <img class="fifty_img" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/stuga2.jpg">
-	        <h3 class="inline_block">Ansiktsmängd<br>Hennes katt</h3>
+	        <p ng-bind-html="properties[1].base_post.excerpt"></p>
+	        <img class="fifty_img" ng-src="{{properties[1].media[0].source}}">
+	        <h3 class="inline_block">{{properties[1].base_post.title}}</h3>
 	      </div>
 	    </div>
 	  </div>
@@ -39,23 +34,18 @@
 	  <div class="col-sm-6 col-md-4 col-lg-4">
 	    <div class="thumbnail">
 	    	<div class="caption">
-	      	<img class="fifty_img" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/stuga2.jpg">
-	      
-	        <h3 class="inline_block">Hatten Biff!<br>Nästan här</h3>
-	        <p>
-	        On todistettu, että lukijaa häiritsee sivun ulkoasu lukiessaan sivua. Lorem Ipsumin käytön tarkoitus on, että se omaa enemmän-tai-vähemmän normaalimpaa sanojen sijoitusta kuin 'Sisältöä tähän, sisältöä tähän'. Monet tietokoneen julkistusohjelmien pakkaukset ja nettisivueditorit käyttävät nyt Lorem Ipsumia heidän normaalina mallitekstinä. 'Lorem Ipsumia' etsittäessä löytyy monen monta nettisivua, jotka ovat vasta aluillaan. Useita versioita on muodostunut vuosien kuluessa, jotkut vahingossa.	
-	        </p>
+	      	<img class="fifty_img" ng-src="{{properties[2].media[0].source}}">
+	        <h3 class="inline_block">{{properties[2].base_post.title}}</h3>
+	        <p ng-bind-html="properties[2].base_post.excerpt"></p>
 	      </div>
 	    </div>
 	  </div>
 	  <div class="col-sm-6 col-md-4 col-lg-4">
 	    <div class="thumbnail">
 	      <div class="caption">
-	        <p>
-	        	Vastoin yleistä uskomusta, Lorem Ipsum ei ole vain sattumanvarainen teksti. Sillä on pitkät juuret klassisesta latinalaisesta kirjallisuudesta vuonna 45 eKr alkaen, tehden siitä yli 2000 vuotta vanhan. Richard McClintock, latinalainen professori Hampden-Sydneyn yliopistossa Virginiassa, etsi yhden vaikeaselkoisimmista latinalaisista sanoista, consectetur, Lorem Ipsumin kappaleesta ja etsi lainauksia sanasta klassisessa kirjallisuudessa löytäen varman lähteen. 
-	        </p>
-	        <img class="fifty_img" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/stuga2.jpg">
-	        <h3 class="inline_block">Ansiktsmängd<br>Hennes katt</h3>
+	       <p ng-bind-html="properties[3].base_post.excerpt"></p>
+	        <img class="fifty_img" ng-src="{{properties[3].media[0].source}}">
+	        <h3 class="inline_block">{{properties[3].base_post.title}}</h3>
 	      </div>
 	    </div>
 	  </div>
