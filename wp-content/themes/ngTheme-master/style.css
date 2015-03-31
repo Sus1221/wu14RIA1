@@ -6587,6 +6587,10 @@ width: 50%;
 	width: 100%;
 }
 
+/*Creating space between header and main*/
+header {
+  margin-bottom: 10px;
+}
 
 /* ++++ Home / Front page */
 
