@@ -7,8 +7,7 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
   //template filter obj. to fill search parameters with
   $scope.propFilters = {
     priceRange: [],
-    propertyType: "",
-    typeRange: {
+    type: {
       Apartment: true,
       House: true,
       Farm: true,

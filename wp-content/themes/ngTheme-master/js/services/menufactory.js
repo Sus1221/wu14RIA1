@@ -2,7 +2,8 @@
 app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
   function crtMnuTree (menuLinks) {
-
+  		//tillfällig return för att slippa error i console
+  		return menuLinks;
 			// Empty array for menu tree
 
 		  var menuTree = []; 
