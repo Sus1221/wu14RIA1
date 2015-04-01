@@ -246,6 +246,29 @@ add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
     add_action( 'init' , 'ngwp_add_property_tax_to_posts' );
 
 
+//create a custom taxonomy called page
+function page_init() {
+  // create a new taxonomy
+  register_taxonomy(
+    'pagetaxonomy',
+    'attachment', //default content type this taxonomy belongs to
+    array(
+      'label' => __( 'Page Tag' ),
+      'rewrite' => array( 'slug' => 'pagetaxonomy' ),
+    )
+  );
+}
+
+add_action( 'init', 'page_init' );
+
+//make custom taxonomy available to pages as well
+function ngwp_add_new_tax_to_page() {
+    register_taxonomy_for_object_type( 'pagetaxonomy', 'page' );
+}
+
+add_action( 'init' , 'ngwp_add_new_tax_to_page' );
+
+
 /* REST */
 
     add_filter( 'json_prepare_post', function ($data, $post, $context) {

@@ -27,7 +27,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       controller: "propertyController"
     })
     //showing data from WP-page about company
-    .when("/om_oss", {
+    .when("/om-oss", {
       templateUrl: SITE_INFO.partials+"views/about.html",
       controller: "homeController"
     })

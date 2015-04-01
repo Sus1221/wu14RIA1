@@ -4,16 +4,34 @@ app.factory("Pages", ["WPRest", "$sce", function (WPRest, $sce) {
     get : function(pageId) {
       var callUrl = pageId ? "/pages/"+pageId : "/pages";
       WPRest.restCall(callUrl, "GET", {}, {
-        broadcastName : "gotPageData",
+        broadcastName : "notImportant",
         callback : function(pageData) {
-            pageData.forEach(function(page, i) {
+          for (var i = pageData.length - 1; i >= 0; i--) {
+            if (!pageData[i].terms.pagetaxonomy) {
+              pageData.splice(i, 1);
+            }
+          }
+
+          var results = [];
+          pageData.forEach(function(page, i) {
 
             page.excerpt = $sce.trustAsHtml(page.excerpt);
             page.content = $sce.trustAsHtml(page.content);
-  
-          });
+            
+            var pageTag = page.terms.pagetaxonomy[0].slug;
+            var mediaCallUrl = "/media?filter[pagetaxonomy]="+pageTag;
+            WPRest.restCall(mediaCallUrl, "GET", {}, {
+              broadcastName: "gotPageData",
+              callback: function(mediaData) {
+                results.push({
+                  "media": mediaData,
+                  "base_page": page
+                });
+                return results;
+              }
 
-        return pageData;
+            });
+          });
 
         }
       });
