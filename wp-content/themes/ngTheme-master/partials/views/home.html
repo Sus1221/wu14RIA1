@@ -21,9 +21,10 @@
 	  <div class="col-sm-6 col-md-4 col-lg-4">
 	    <div class="thumbnail">
 	      <div class="caption">
-	      	<img class="hundred_img" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/villa.jpg">
-	        <p>
-	         Richard McClintock, latinalainen professori Hampden-Sydneyn yliopistossa Virginiassa, etsi yhden vaikeaselkoisimmista latinalaisista sanoista, consectetur, Lorem Ipsumin kappaleesta ja etsi lainauksia sanasta klassisessa kirjallisuudessa löytäen varman lähteen. 
+	      	<img class="hundred_img" ng-src="{{pages[0].media[0].source}}">
+	        <h3 class="inline_block">{{pages[0].base_page.title}}
+	        </h3>
+	        <p ng-bind-html="pages[0].base_page.excerpt">
 	        </p>
 	      </div>
 	    </div>
@@ -51,9 +52,10 @@
 	  <div class="col-sm-6 col-md-4 col-lg-4">
 	    <div class="thumbnail">
 	      <div class="caption">
-	      	<img class="hundred_img" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/villa.jpg">
-	        <p>
-	         Richard McClintock, latinalainen professori Hampden-Sydneyn yliopistossa Virginiassa, etsi yhden vaikeaselkoisimmista latinalaisista sanoista, consectetur, Lorem Ipsumin kappaleesta ja etsi lainauksia sanasta klassisessa kirjallisuudessa löytäen varman lähteen. 
+	      	<img class="hundred_img" ng-src="{{pages[1].media[0].source}}">
+	        <h3 class="inline_block">{{pages[1].base_page.title}}
+	        </h3>
+	        <p ng-bind-html="pages[1].base_page.excerpt">
 	        </p>
 	      </div>
 	    </div>

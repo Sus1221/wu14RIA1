@@ -1,22 +1,13 @@
 <section class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-12 col-lg-12">
-		<h2>{{pages[0].base_page.title}}</h2>
-	  	<img ng-src="{{pages[0].media[0].source}}" class="hundred-img img-responsive">
+		<h2>{{pages[1].base_page.title}}</h2>
+	  	<img ng-src="{{pages[1].media[0].source}}" class="hundred-img img-responsive">
 	 	</div>
 	</div>
-  	<div class="row">
-  		<div class="col-sm-6 col-md-4 col-lg-4">
-  			
+
+	<div class="page_content row">
+		<div clas="col-cs-4 col-sm-4 col-md-6 col-lg-12" ng-bind-html="pages[1].base_page.content">
 		</div>
 	</div>
-	<div class="row">
-		<div clas="col-cs-8 col-sm-8 col-md-8 col-lg-8" ng-bind-html="pages[0].base_page.content">
-		</div>
-	</div>
-  <!-- 
-    here we output the html that we have told Angular to trust
-    using $sce.trustAsHtml. We cannot use {{}} for HTML strings 
-  -->
-  <div class="row" ng-bind-html="trustedHtml"></div>
 </section>

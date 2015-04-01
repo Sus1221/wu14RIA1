@@ -6651,7 +6651,11 @@ header {
 
 
 
-/* ++++ About us * /
+/* Pages text area */
+
+.page_content {
+  padding-top: 15px;
+}
 
 	/* Jumbo */
 
