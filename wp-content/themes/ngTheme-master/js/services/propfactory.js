@@ -1,5 +1,17 @@
+Array.prototype.indexOfObj = function(objKey, objVal) {
+  for (var i = 0; i < this.length; i++) {
+    if (this[i][objKey] == objVal) {
+      return i;
+    }
+  }
+
+  return -1;
+};
+
+
 app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
   var searchResult = [];
+  var found = [];
   //declare our object literal to return later
   var propertyServant = {
   	find : function(searchParams, pageNo, startOver){
@@ -11,6 +23,7 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
       if (startOver || pageNo === 1) {
         //empty searchResult array
         searchResult.length = 0;
+        found = [];
       }
   
       //build a REST callUrl from search params
@@ -51,6 +64,9 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
 
           //loop through recieved data
       		postData.forEach(function(post, i) {
+            if (found.indexOfObj("ID", post.ID) >= 0) { return; }
+
+            found.push(post);
       			//last will become through only when we're looping through the last object in postData
       			var last = i === postData.length-1;
             console.log("Last ", last);

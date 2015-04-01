@@ -15,9 +15,9 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
     }
   };
 
-  //var pageNo = 1;
+  var pageNo = 1;
   //get pages according to current url
-  PropFactory.find($routeParams);
+  PropFactory.find($routeParams, pageNo);
  
   //listens to broadcast from PropFactory
   $scope.$on("foundProperty", function(event, data) {
@@ -32,8 +32,8 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
     $scope.properties = data;
     console.log("$scope.properties: ", $scope.properties);
 
-    //pageNo++; //get next page of results
-    //PropFactory.find($routeParams, pageNo);
+    pageNo++; //get next page of results
+    PropFactory.find($routeParams, pageNo);
   });
 
   //Changes url, adds name of one property
