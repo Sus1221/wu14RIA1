@@ -6559,7 +6559,7 @@ button.close {
 /* HEADER */
 
 #customSocialMediaLinks {
-  margin-top: 5vh;
+  margin-top: 5px;
 }
 
 #customSocialMediaLinks a i {
@@ -6579,8 +6579,17 @@ button.close {
 	margin-left: 3px;
 }
 
+.logWrap {
+  padding-top: 20px;
+}
+
 #logo {
 	width: 100%;
+  display: inline-block;
+}
+
+.logoarea {
+  padding-bottom: 10px;
 }
 
 .fifty_img {
