@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-8">
       <div class="row">
-        <div class="col-sm-12 resultRow" ng-repeat="property in properties | filter:citySearch">
+        <div class="col-sm-12 resultRow" ng-repeat="property in properties | filter:citySearch | type: propFilters.type">
             <div class="thumbnail col-sm-4 col-md-4 col-lg-4">
 	      		<img ng-click="showSingleProp(property.base_post.slug);" ng-src="{{property.media[0].source}}" class="hundred_img img-responsive">
       		</div>
@@ -27,16 +27,16 @@
 			    <div class="selectbox">
 			    	<p>Bostadstyp:</p>
 			    		<label class="checkbox-inline">
-			    			<input type="checkbox" ng-model="propFilters.type.Apartment" value="1">Lägenhet
+			    			<input type="checkbox" ng-model="propFilters.type.apartment" value="1">Lägenhet
 			    		</label><br>
 			    		<label class="checkbox-inline">
-			    			<input type="checkbox" ng-model="propFilters.type.House" value="1">Hus
+			    			<input type="checkbox" ng-model="propFilters.type.house" value="1">Hus
 			    		</label><br>
 			    		<label class="checkbox-inline">
-			    			<input type="checkbox" ng-model="propFilters.type.Farm" value="1">Gård
+			    			<input type="checkbox" ng-model="propFilters.type.farm" value="1">Gård
 			    		</label><br>
 			    		<label class="checkbox-inline">
-			    			<input type="checkbox" ng-model="propFilters.type.Plot" value="1">Tomt
+			    			<input type="checkbox" ng-model="propFilters.type.plot" value="1">Tomt
 			    		</label>
 					<!-- <select ng-model="propFilters.propertyType" ng-options="type for type in propTypes">
 				        <option value="">Alla objekt</option>

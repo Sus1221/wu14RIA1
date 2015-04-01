@@ -23,5 +23,6 @@ app.filter('type', function(){
 					}
 				}
 			}
+		return propsThatGotThrough;
 		};
 });

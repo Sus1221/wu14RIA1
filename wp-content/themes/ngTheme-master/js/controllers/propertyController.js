@@ -8,10 +8,10 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
   $scope.propFilters = {
     priceRange: [],
     type: {
-      Apartment: true,
-      House: true,
-      Farm: true,
-      Plot: true
+      apartment: true,
+      house: true,
+      farm: true,
+      plot: true
     }
   };
 
