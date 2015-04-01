@@ -44,4 +44,4 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
 
 
 //contact
-    var app = angular.module('contactApp', []);
+    /*var app = angular.module('contactApp', []);*/
