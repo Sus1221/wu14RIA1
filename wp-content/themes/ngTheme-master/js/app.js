@@ -21,7 +21,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/page.html",
       controller: "homeController"
     })
-    //showing table of all earchresults
+    //showing table of all searchresults
     .when("/searchresult", {
       templateUrl: SITE_INFO.partials+"views/searchresult.html",
       controller: "propertyController"
@@ -30,8 +30,15 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
     .when("/singleprop/:name", {
       templateUrl: SITE_INFO.partials+"views/singleprop.html",
       controller: "propertyController"
-    }).when("/contact",{
+    })
+
+    .when("/contact",{
       templateUrl: SITE_INFO.partials+"views/modal.html",
+    })
+    //showing article by broker
+    .when("/brokerwords.html", {
+      templateUrl: SITE_INFO.partials+"views/brokerwords.html",
+      controller: "pageController"
     })
     /*.when("/contact",{
       templateUrl: SITE_INFO.partials+"views/modal.html",
