@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-8">
       <div class="row">
-        <div class="col-sm-12 resultRow" ng-repeat="property in properties | filter:citySearch | type: propFilters.type">
+        <div class="col-sm-12 resultRow" ng-repeat="property in properties | filter:citySearch | type: propFilters.type | price: propFilters.priceRange">
             <div class="thumbnail col-sm-4 col-md-4 col-lg-4">
 	      		<img ng-click="showSingleProp(property.base_post.slug);" ng-src="{{property.media[0].source}}" class="hundred_img img-responsive">
       		</div>
@@ -43,9 +43,9 @@
 				    </select> -->
 		      	</div>		    	
 			    <div class="textbox">
-			      <label>Prisintervall: </br><input type="number" value=""><p>till </p><input type="number" value=""></label>
+			      <label>Prisintervall: </br><input type="number" value="" ng-model="propFilters.priceRange[0]"><p>till </p><input type="number" value="" ng-model="propFilters.priceRange[1]"></label>
 			    </div>			    
-			    <button>Rensa alla filter</button>
+			    <button ng-click="resetFilter()">Rensa alla filter</button>
 			</form>
 		</div>
     </div>

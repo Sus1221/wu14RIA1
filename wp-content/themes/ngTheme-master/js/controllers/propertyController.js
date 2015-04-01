@@ -41,4 +41,18 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
     console.log("showSingleProp name inparameter", name);
     $location.url("/singleprop/" + name);
   };
+
+  $scope.resetFilter = function() {
+    $scope.propFilters = {
+      priceRange: [],
+      type: {
+        apartment: true,
+        house: true,
+        farm: true,
+        plot: true
+      }
+    };
+    $scope.citySearch.facts.city = "";
+  };
+
 }]);
