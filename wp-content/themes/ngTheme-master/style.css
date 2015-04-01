@@ -4840,7 +4840,7 @@ a.badge:focus {
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding: 48px 0;
+    padding: 12px 0;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
@@ -6556,6 +6556,7 @@ button.close {
 
 
 
+/* HEADER */
 
 #customSocialMediaLinks {
   margin-top: 5vh;
