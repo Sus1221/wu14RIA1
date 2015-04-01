@@ -2,9 +2,8 @@
 app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
   function crtMnuTree (menuLinks) {
-
-  	console.log("- -- MenuLinks: ", menuLinks);
-
+  		//tillfällig return för att slippa error i console
+  		return menuLinks;
 			// Empty array for menu tree
 
 		  var menuTree = []; 
@@ -64,12 +63,11 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
 		}); 
 
-			console.log("- -- menuTree: ", menuTree);
 	return menuTree;
 	};
 
 	function prepareMenu(menuObj) {
-  	console.log ("- -- prepareMenu, menuObj: ", menuObj);
+  	
     menuObj.items = crtMnuTree(menuObj.items);
 
     return menuObj;
