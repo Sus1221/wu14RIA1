@@ -2,8 +2,7 @@
 app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
   function crtMnuTree (menuLinks) {
-  		//tillfällig return för att slippa error i console
-  		return menuLinks;
+  		
 			// Empty array for menu tree
 
 		  var menuTree = []; 
@@ -58,10 +57,10 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
   		// sort links by children.lenght (high to low)
 			// (menu order by	depth. In the DOM - deepest to the left
 
-			menuTree.sort(function(x,y){
-			return x.children.length < y.children.length;
+			// menuTree.sort(function(x,y){
+			// return x.children.length < y.children.length;
 
-		}); 
+		
 
 	return menuTree;
 	};

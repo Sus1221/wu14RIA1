@@ -12,9 +12,14 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/searchresult.html",
       controller: "propertyController"
     })
+    //showing data from WP-page about company
+    .when("/pages/om-sellforce", {
+      templateUrl: SITE_INFO.partials+"views/about.html",
+      controller: "homeController"
+    })
     .when("/pages/:name", {
       templateUrl: SITE_INFO.partials+"views/page.html",
-      controller: "pageController"
+      controller: "homeController"
     })
     //showing table of all earchresults
     .when("/searchresult", {
@@ -25,11 +30,6 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
     .when("/singleprop/:name", {
       templateUrl: SITE_INFO.partials+"views/singleprop.html",
       controller: "propertyController"
-    })
-    //showing data from WP-page about company
-    .when("/om-oss", {
-      templateUrl: SITE_INFO.partials+"views/about.html",
-      controller: "homeController"
     })
     .otherwise({
       redirectTo: "/"
