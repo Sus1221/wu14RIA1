@@ -30,7 +30,12 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
     .when("/singleprop/:name", {
       templateUrl: SITE_INFO.partials+"views/singleprop.html",
       controller: "propertyController"
+    }).when("/contact",{
+      templateUrl: SITE_INFO.partials+"views/modal.html",
     })
+    /*.when("/contact",{
+      templateUrl: SITE_INFO.partials+"views/modal.html",
+    })*/
     .otherwise({
       redirectTo: "/"
     });

@@ -1,4 +1,4 @@
-app.controller('ContactController', function ($scope, $http) {
+app.controller('contactController', function ($scope, $http, $modalInstance) {
     $scope.result = 'hidden';
     $scope.resultMessage;
     $scope.formData; //formData is an object holding the name, email, subject, and message
@@ -10,7 +10,7 @@ app.controller('ContactController', function ($scope, $http) {
         if (contactform.$valid) {
             $http({
                 method  : 'POST',
-                url     : 'contact-form.php',
+                url     : '../../php/contact-form.php',
                 data    : $.param($scope.formData),  //param method from jQuery
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
             }).success(function(data){
@@ -24,6 +24,8 @@ app.controller('ContactController', function ($scope, $http) {
                     $scope.resultMessage = data.message;
                     $scope.result='bg-danger';
                 }
+
+                $modalInstance.close();
             });
         } else {
             $scope.submitButtonDisabled = false;
@@ -31,4 +33,9 @@ app.controller('ContactController', function ($scope, $http) {
             $scope.result='bg-danger';
         }
     }
+
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
 });
