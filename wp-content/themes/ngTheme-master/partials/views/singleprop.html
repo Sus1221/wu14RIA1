@@ -1,3 +1,4 @@
+<!-- showed inside of <main> when a single property is viewed. With all details -->
 <section class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-12 col-lg-12 singleprop_img_div">
@@ -36,15 +37,10 @@
 		<div class="col-xs-0 col-sm-0 col-md-1 col-lg-2 buffer2">
 		</div>
 	</div>
-	<!--Here maybe we want to ng-repeat all pictures belonging to a property -->
+	<!--Repeating all imgs belonging to a property -->
 	<div class="row">
 		<div ng-repeat="picture in properties[0].media" class="col-xs-12 col-md-12 col-lg-12 singleprop_img_div">
 			<img class="big_image img-responsive" ng-src="{{picture.source}}">
 		</div>
 	</div>
-  <!-- 
-    here we output the html that we have told Angular to trust
-    using $sce.trustAsHtml. We cannot use {{}} for HTML strings 
-  -->
-  <div class="row" ng-bind-html="trustedHtml"></div>
 </section>

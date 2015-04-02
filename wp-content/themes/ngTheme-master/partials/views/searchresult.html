@@ -1,3 +1,4 @@
+<!-- shows inside of <main> when searchresults table is showed -->
 <section class="container">
   <div class="row">
     <div class="col-sm-8">
@@ -38,9 +39,6 @@
 			    		<label class="checkbox-inline">
 			    			<input type="checkbox" ng-model="propFilters.type.plot" value="1">Tomt
 			    		</label>
-					<!-- <select ng-model="propFilters.propertyType" ng-options="type for type in propTypes">
-				        <option value="">Alla objekt</option>
-				    </select> -->
 		      	</div>		    	
 			    <div class="textbox">
 			      <label>Prisintervall: </br><input type="number" value="" ng-model="propFilters.priceRange[0]"><p>till </p><input type="number" value="" ng-model="propFilters.priceRange[1]"></label>
@@ -50,11 +48,4 @@
 		</div>
     </div>
   </div>
-
-
-  <!-- 
-    here we output the html that we have told Angular to trust
-    using $sce.trustAsHtml. We cannot use {{}} for HTML strings 
-  -->
-  <div class="row" ng-bind-html="trustedHtml"></div>
 </section>

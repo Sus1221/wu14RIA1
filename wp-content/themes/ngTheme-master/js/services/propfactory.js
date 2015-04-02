@@ -1,3 +1,4 @@
+//on every array; put a custom  
 Array.prototype.indexOfObj = function(objKey, objVal) {
   for (var i = 0; i < this.length; i++) {
     if (this[i][objKey] == objVal) {
@@ -67,8 +68,8 @@ app.factory ('PropFactory', ["WPRest", "$sce", function(WPRest, $sce){
             if (found.indexOfObj("ID", post.ID) >= 0) { return; }
 
             found.push(post);
-      			//last will become through only when we're looping through the last object in postData
-      			var last = i === postData.length-1;
+      			//last will become true only when we're looping through the last object in postData
+      			var last = i === postData.length - 1;
             console.log("Last ", last);
             //make the exerpt and content of every post trusted html (an angular.js function)
       			post.excerpt = $sce.trustAsHtml(post.excerpt);

@@ -8,7 +8,6 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", "$lo
   //get all pages from PageFactory
   Pages.get();
 
-  
   //listening for the "gotPageData" broadcast on $http success in pageFactory
   $scope.$on("gotPageData", function(event, data) {
     console.log("homeController on gotPageData: ", data);
@@ -22,6 +21,7 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", "$lo
     console.log("pages", $scope.pages);
   });
 
+  //when showOnePage is 
   $scope.showSinglePage = function(slug) {
     console.log("showSinglePage name inparameter", slug);
     //sets url-ending to a single page
@@ -41,26 +41,14 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", "$lo
     $scope.properties = data;
     console.log("$scope.properties: ", $scope.properties);
 
-    //pageNo++; //get next page of results
-    //PropFactory.find($routeParams, pageNo);
+    pageNo++; //get next page of results
+    PropFactory.find($routeParams, pageNo);
   });
 
-  //Changes url, adds name of one property
+  //Changes url, adds name of single property
   $scope.showSingleProp = function(name) {
     console.log("showSingleProp name inparameter", name);
     $location.url("/singleprop/" + name);
   };
 
 }]);
-
-
-    /* 
-      angular protects us from "dangerous" HTML by converting it to a string
-
-      if we want to show HTML from a string in DOM 
-      we first need to tell angular that it can be trusted.
-      
-      this is done using the $sce service on the HTML string in JS
-      and the ng-bind-html directive in the view
-    */
-    //$scope.trustedHtml = $sce.trustAsHtml(data[0].content);

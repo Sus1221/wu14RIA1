@@ -15,6 +15,7 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
     }
   };
 
+  //set initial pageNumber to 1, (pagenumber here meaning page from WP-DB delivering 10 items at a time)
   var pageNo = 1;
   //get pages according to current url
   PropFactory.find($routeParams, pageNo);
@@ -42,7 +43,9 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
     $location.url("/singleprop/" + name);
   };
 
+  //when filterReset is requested
   $scope.resetFilter = function() {
+    //empty template filter obj.
     $scope.propFilters = {
       priceRange: [],
       type: {
@@ -52,6 +55,7 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
         plot: true
       }
     };
+    //and empty another value on scope
     $scope.citySearch.facts.city = "";
   };
 

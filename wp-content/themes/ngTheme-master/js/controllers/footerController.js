@@ -1,9 +1,10 @@
 //controller for footer
-app.controller("footerController", ["$scope","$modal", "SITE_INFO", 
+app.controller("footerController", ["$scope","$modal", "SITE_INFO",
 	function($scope, $modal, SITE_INFO) {
   console.log("footerController is alive!");
 
-  $scope.modalShow=function(){
+  //showing modal
+  $scope.modalShow = function(){
   	console.log("showing");
 
   	var modalInstance = $modal.open({

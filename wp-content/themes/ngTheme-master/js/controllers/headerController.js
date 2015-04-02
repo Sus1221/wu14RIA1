@@ -5,22 +5,26 @@ app.controller("headerController", ["$scope", "$location", "SITE_INFO", "Menus",
 
   $scope.isCollapsed = true;
 
+  //Rolls in and out menu when button is closed
   $scope.collapseNav = function() {
-  	$scope.isCollapsed = !$scope.isCollapsed;
-  }
+    $scope.isCollapsed = !$scope.isCollapsed;
+  };
 
   //get menuItems from menufactory.js
-
   Menus.get(12);
-  $scope.$on("gotMenuLinks", function(event, data){
-  	$scope.menuLinks = data.items;
 
-  })
+  //when right broadcast is done
+  $scope.$on("gotMenuLinks", function(event, data){
+    //put data on $scope
+    $scope.menuLinks = data.items;
+  });
+
   //path to go to is sent in and then executed in this function
   $scope.goTo = function(path) {
     $location.url(path);
   };
 
+  //when freesearch-field is used
   $scope.search = function() {
     //change location.url to include our searchword; this makes the right controllerrun
     var locationUrl = "/searchresult";
@@ -34,7 +38,6 @@ app.controller("headerController", ["$scope", "$location", "SITE_INFO", "Menus",
 
   };
 
-  //Property.find();
   console.log("headerController hej!");
 
 }]);

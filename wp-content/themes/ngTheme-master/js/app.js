@@ -31,7 +31,6 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/singleprop.html",
       controller: "propertyController"
     })
-
     .when("/contact",{
       templateUrl: SITE_INFO.partials+"views/modal.html",
     })
@@ -40,20 +39,11 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/brokerwords.html",
       controller: "pageController"
     })
-    /*.when("/contact",{
-      templateUrl: SITE_INFO.partials+"views/modal.html",
-    })*/
     .otherwise({
       redirectTo: "/"
     });
-
-
 
   $locationProvider.html5Mode(true);
 }])
 .constant('SITE_INFO', myLocalized)
 .constant('API_ROUTE', "wp-json");
-
-
-//contact
-    /*var app = angular.module('contactApp', []);*/

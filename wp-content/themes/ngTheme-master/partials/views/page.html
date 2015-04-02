@@ -1,3 +1,4 @@
+<!-- shows inside of <main> when a page is showed -->
 <section class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-12 col-lg-12">
@@ -14,9 +15,4 @@
 		<div clas="col-cs-8 col-sm-8 col-md-8 col-lg-8" ng-bind-html="pages[0].content">
 		</div>
 	</div>
-  <!-- 
-    here we output the html that we have told Angular to trust
-    using $sce.trustAsHtml. We cannot use {{}} for HTML strings 
-  -->
-  <div class="row" ng-bind-html="trustedHtml"></div>
 </section>

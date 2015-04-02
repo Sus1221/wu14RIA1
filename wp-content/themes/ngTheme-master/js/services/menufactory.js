@@ -2,39 +2,33 @@
 app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
   function crtMnuTree (menuLinks) {
-  		
-			// Empty array for menu tree
 
-		  var menuTree = []; 
+		// Empty array for menu tree
+		var menuTree = [];
 
-		  // sort by weight
-		    menuLinks.sort(function(x,y){
-		      return x.order > y.order;
-		    });
+		// sort by weight
+		menuLinks.sort(function(x,y){
+		  return x.order > y.order;
+		});
 
 		  // Empty object for hashmap
-
 		  var hashMap = {};
 
 		  // loop through menuLinks and ...
-
 		  for (i = 0; i < menuLinks.length; i++) {
 
 		  	// Remove site root from link urls
 		  	menuLinks[i].url = menuLinks[i].url.replace(SITE_INFO.http_root, "");
 
 		  	// Give each menuLinks object a new property - children
-
 		    menuLinks[i].children = [];
 
 		    // Add ** all ** objects to hash, with "_" and value of mlid
 		    // property as object 'name'
-
 		    hashMap["_"+menuLinks[i].ID] = menuLinks[i];
 		    
 		    // if the object does not have a parent-link ID, 
 		    // ** assume top-level link and push it to menuTree. **
-
 		    if (!menuLinks[i].parent){
 		    menuTree.push(menuLinks[i]); 
 		    }
@@ -43,7 +37,6 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
 		  // add children to all menu_items ** using the hash reference **
 		  // -- The hash reference The hash reference The HASH Reference !! --
-
 		  for(var i in hashMap){
 		    var item = hashMap[i];
 		    
@@ -60,15 +53,11 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 			// menuTree.sort(function(x,y){
 			// return x.children.length < y.children.length;
 
-		
-
 	return menuTree;
 	};
 
 	function prepareMenu(menuObj) {
-  	
     menuObj.items = crtMnuTree(menuObj.items);
-
     return menuObj;
   }
 
