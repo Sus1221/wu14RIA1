@@ -6715,6 +6715,12 @@ footer .jumbotron {
 	margin-bottom: 0;
 }
 
+footer #modalButton {
+  margin-top: 5vh;
+  margin-left: 10vw;
+  
+}
+
 #footer-img {
 	width: 100%;
 	height: 100px;
