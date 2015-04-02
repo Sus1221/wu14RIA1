@@ -12,10 +12,9 @@ app.controller('contactController', function ($scope, $http, $modalInstance) {
             $http({
                 method  : 'POST',
                 url     : '/wu14RIA1/wp-content/themes/ngTheme-master/php/contact-form.php',
-                data    : $scope.formData,  //param method from jQuery
+                data    : param($scope.formData),
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
-            }).success(function(data){
-                // console.log(data);
+            }).success(function(data){			
                 if (data.success) { //success comes from the return json object
                     $scope.submitButtonDisabled = true;
                     $scope.resultMessage = data.message;
@@ -40,3 +39,12 @@ app.controller('contactController', function ($scope, $http, $modalInstance) {
     $modalInstance.dismiss('cancel');
   };
 });
+
+var param = function(data) {
+        var returnString = '';
+        for (d in data){
+            if (data.hasOwnProperty(d))
+               returnString += d + '=' + data[d] + '&';
+        }
+        return returnString.slice( 0, returnString.length - 1 );
+  };

@@ -15,18 +15,27 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
     //create an instance of PHPMailer
     $mail = new PHPMailer();
 
-    $mail->From = $_POST['inputEmail'];
-    $mail->FromName = $_POST['inputName'];
-    $mail->AddAddress('davidrhodin@yahoo.se'); //recipient 
+	$mail->IsSMTP(); // enable SMTP
+	$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+	$mail->SMTPAuth = true; // authentication enabled
+	$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+	$mail->Host = " smtp.mail.yahoo.com";
+	$mail->Port = 465; // or 587
+	$mail->IsHTML(false);
+	$mail->Username = "sellforce@yahoo.se";
+	$mail->Password = "adminadmin";
+	$mail->AddAddress("sellforce@yahoo.se");
+    $mail->From = "sellforce@yahoo.se";
+    $mail->FromName = "Form "  .$_POST['inputName'];
     $mail->Subject = $_POST['inputSubject'];
-    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
+    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMail: " . $_POST['inputEmail'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
 
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
     }
 
     if(!$mail->send()) {
-        $data = array('success' => false, 'message' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
+        $data = array('success' => false, 'message' => 'Message could not be sent. Mailer Error: ');// . $mail->ErrorInfo);
         echo json_encode($data);
         exit;
     }
