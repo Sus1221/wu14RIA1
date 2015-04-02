@@ -8,12 +8,12 @@ $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
 $mail->Host = " smtp.mail.yahoo.com";
 $mail->Port = 465; // or 587
 $mail->IsHTML(true);
-$mail->Username = "davidrhodin@yahoo.se";
-$mail->Password = "FuckingJavlaGoogleSkit83";
-$mail->SetFrom("davidrhodin@yahoo.se");
+$mail->Username = "sellforce@yahoo.se";
+$mail->Password = "adminadmin"
+$mail->SetFrom("sellforce@yahoo.se");
 $mail->Subject = "Test";
 $mail->Body = "hello";
-$mail->AddAddress("jonas.w.persson@gmail.com");
+$mail->AddAddress("sellforce@yahoo.se");
  if(!$mail->Send())
     {
     echo "Mailer Error: " . $mail->ErrorInfo;

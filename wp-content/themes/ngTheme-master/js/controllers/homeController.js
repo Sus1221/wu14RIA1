@@ -1,5 +1,6 @@
 //controller for homeview
-app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", "$location", function($scope, Pages, $sce, PropFactory, $location) {
+app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", "$location", "$routeParams", 
+  function($scope, Pages, $sce, PropFactory, $location, $routeParams) {
   console.log("homeController alive!");
 
   //get all properties from PropFactory
@@ -29,6 +30,7 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "PropFactory", "$lo
   };
 
   //when propFactory delivers broadcast
+  var pageNo = 1;
   $scope.$on("foundProperty", function(event, data) {
     console.log("listening to propfactory broadcast in homeController");
     //if no data is recieved

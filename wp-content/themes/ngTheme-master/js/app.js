@@ -19,7 +19,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
     })
     .when("/pages/:name", {
       templateUrl: SITE_INFO.partials+"views/page.html",
-      controller: "homeController"
+      controller: "pageController"
     })
     //showing table of all searchresults
     .when("/searchresult", {

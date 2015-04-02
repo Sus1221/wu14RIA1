@@ -26,7 +26,7 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
 	$mail->Password = "adminadmin";
 	$mail->AddAddress("sellforce@yahoo.se");
     $mail->From = "sellforce@yahoo.se";
-    $mail->FromName = "Form "  .$_POST['inputName'];
+    $mail->FromName = " "  .$_POST['inputName'];
     $mail->Subject = $_POST['inputSubject'];
     $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMail: " . $_POST['inputEmail'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
 

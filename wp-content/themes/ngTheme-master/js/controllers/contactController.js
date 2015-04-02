@@ -1,26 +1,21 @@
-//handling data from contactform
 app.controller('contactController', function ($scope, $http, $modalInstance) {
     $scope.result = 'hidden';
     $scope.resultMessage;
     $scope.formData; //formData is an object holding the name, email, subject, and message
     $scope.submitButtonDisabled = false;
     $scope.submitted = false; //used so that form errors are shown only after the form has been submitted
-    //When form i submitted
     $scope.submit = function(contactform) {
         $scope.submitted = true;
         $scope.submitButtonDisabled = true;
-        console.log("form data",$scope.formData);
-        //if contactform is valid
+        console.log("form data",$scope.formData)
         if (contactform.$valid) {
-            //send http-request
             $http({
                 method  : 'POST',
                 url     : '/wu14RIA1/wp-content/themes/ngTheme-master/php/contact-form.php',
                 data    : param($scope.formData),
-            }).success(function(data){
-                // console.log(data);
-                 //success comes from the return json object
-                if (data.success) {
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
+            }).success(function(data){			
+                if (data.success) { //success comes from the return json object
                     $scope.submitButtonDisabled = true;
                     $scope.resultMessage = data.message;
                     $scope.result='bg-success';
@@ -29,20 +24,19 @@ app.controller('contactController', function ($scope, $http, $modalInstance) {
                     $scope.resultMessage = data.message;
                     $scope.result='bg-danger';
                 }
-                //close modal
+
                 $modalInstance.close();
             });
-        //if contactform isn't valid
         } else {
             $scope.submitButtonDisabled = false;
             $scope.resultMessage = 'Failed :( Please fill out all the fields.';
             $scope.result='bg-danger';
         }
-    };
+    }
 
-    //closing the modal
-    $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
   };
 });
 

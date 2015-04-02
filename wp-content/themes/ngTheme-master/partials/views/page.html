@@ -1,18 +1,12 @@
 <!-- shows inside of <main> when a page is showed -->
 <section class="container">
-	<div class="row">
-		<div class="col-xs-12 col-md-12 col-lg-12">
-	  	<img class="about-img" src="../wu14RIA1/wp-content/themes/ngTheme-master/partials/img/plasma.jpg">
-	 	</div>
-	</div>
   	<div class="row">
   		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-  			<h1>A page.</h1>
-  			<h3>Requiring a controller that requires a factory.</h3>
+  			<h1>{{page[0].base_page.title}}</h1>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-cs-8 col-sm-8 col-md-8 col-lg-8" ng-bind-html="pages[0].content">
+		<div class="col-cs-8 col-sm-8 col-md-8 col-lg-8" ng-bind-html="page[0].base_page.content">
 		</div>
 	</div>
 </section>
