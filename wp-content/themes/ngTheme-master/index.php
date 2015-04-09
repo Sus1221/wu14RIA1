@@ -2,7 +2,7 @@
 <html>
 <head>
   <!-- base href must correspond to the base path of your wordpress site -->
-  <base href="/">
+  <base href="/wu14RIA1/">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <title>Sellforce</title>
