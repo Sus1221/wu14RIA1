@@ -21,6 +21,9 @@ app.controller("headerController", ["$scope", "$location", "SITE_INFO", "Menus",
 
   //path to go to is sent in and then executed in this function
   $scope.goTo = function(path) {
+    if(path == "pages/projekt/") {
+      return;
+    }
     $location.url(path);
   };
 
