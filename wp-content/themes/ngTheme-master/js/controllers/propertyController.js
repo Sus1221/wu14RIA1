@@ -5,15 +5,15 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
   //Array values for selectbox in filterbox
   $scope.propTypes = ['Villa','Lägenhet','Gård','Tomt'];
   //template filter obj. to fill search parameters with
-  $scope.propFilters = {
-    priceRange: [],
-    type: {
-      apartment: true,
-      house: true,
-      farm: true,
-      plot: true
-    }
-  };
+   $scope.propFilters = {
+        priceRange: [],
+        type: {
+          "lägenhet": true,
+          "hus": true,
+          "gård": true,
+          "tomt": true
+        }
+      };
 
   //set initial pageNumber to 1, (pagenumber here meaning page from WP-DB delivering 10 items at a time)
   var pageNo = 1;
@@ -49,10 +49,10 @@ app.controller("propertyController", ["$scope", "PropFactory" ,"$routeParams", "
     $scope.propFilters = {
       priceRange: [],
       type: {
-        apartment: true,
-        house: true,
-        farm: true,
-        plot: true
+        "lägenhet": true,
+        "hus": true,
+        "gård": true,
+        "tomt": true
       }
     };
     //and empty another value on scope
