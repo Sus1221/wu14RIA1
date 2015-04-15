@@ -6569,6 +6569,13 @@ button.close {
 
 .filterbox {
 	display: inline-block;
+	border: 1px solid gray;
+}
+
+.filt_label {
+	font-size: 14px;
+	font-weight: normal;
+	
 }
 
 .inline_block {
