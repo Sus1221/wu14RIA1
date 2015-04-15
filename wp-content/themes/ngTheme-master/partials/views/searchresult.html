@@ -2,6 +2,66 @@
 <section class="container-fluid">
   <div class="row">
   	<div class="col-sm-12">
+      <div class="col-sm-12 col-md-12 col-lg-12 filterbox panel panel-default">
+  			<div class="panel-body">
+			    <form role="form" class="form-horizontal">
+			    	<div class="form-group">
+			    		<div class="row">
+			    			
+			    				
+			    				<div class="col-sm-2">
+					    			<p>Filtrera resultat </p>
+					    		</div>
+
+					    		<div class="col-sm-2">
+							    	<input id="apartment" type="checkbox" ng-model="propFilters.type['lägenhet']" value="1">
+						    		<label for="apartment" class="filt_label">Lägenhet </label>
+						    	</div>
+
+						    	<div class="col-sm-2">
+						    		<input id="villa" type="checkbox" ng-model="propFilters.type.hus" value="1">
+						    		<label for="villa" class="filt_label">Villa </label>
+						    	</div>
+			    	
+						    	<div class="col-sm-2">
+						    		<input id="farm"  type="checkbox" ng-model="propFilters.type['gård']" value="1">
+						    		<label for="farm" class="filt_label">Gård </label>
+						    	</div>
+
+						    	<div class="col-sm-2">
+						    		<input id="plot" type="checkbox" ng-model="propFilters.type.tomt" value="1">
+						    		<label for="plot" class="filt_label">Tomt </label>
+							    </div>
+
+							    <div class="col-sm-2">
+							    	<button class="btn btn-default pull-right" ng-click="resetFilter()">Nollställ filter</button>
+						   		</div>
+				    	</div>
+
+				    	<div class="row">
+					    	<div class="col-sm-4">
+	      					<input placeholder="Ort" class="form-control" type="text" value="" ng-model="citySearch.facts.city">
+	      				</div>
+
+	      				<div class="col-sm-4">
+	      					<input placeholder="Pris från.." class="form-control" type="number" value="" ng-model="propFilters.priceRange[0]">
+	      				</div>
+	      		
+	      				<div class="col-sm-4">
+	      					<input placeholder="till" class="form-control" type="number" value="" ng-model="propFilters.priceRange[1]">
+	      				</div>
+	      			</div>
+
+    				</div>
+					</form>
+				</div>
+
+			</div>
+    </div>
+
+    <!-- end filter -->
+
+    <div class="col-sm-10">
       <div class="row">
         <div class="col-sm-12 resultRow" ng-repeat="property in properties | filter:citySearch | type: propFilters.type | price: propFilters.priceRange">
             <div class="thumbnail col-sm-6 col-md-6 col-lg-4">
@@ -18,35 +78,6 @@
 		    </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-4 other">
-      <div class="col-sm-12 col-md-12 col-lg-12 filterbox">
-	  		<h3>Filtrera resultat</h3>
-		    <form role="form">
-		    	<div class="textbox">
-			      <label>Stad: </br><input type="text" value="" ng-model="citySearch.facts.city"></label>
-			    </div>
-			    <div class="selectbox">
-			    	<p>Bostadstyp:</p>
-			    		<label class="checkbox-inline">
-			    			<input type="checkbox" ng-model="propFilters.type['lägenhet']">Lägenhet
-			    		</label><br>
-			    		<label class="checkbox-inline">
-			    			<input type="checkbox" ng-model="propFilters.type.hus">Hus
-			    		</label><br>
-			    		<label class="checkbox-inline">
-			    			<input type="checkbox" ng-model="propFilters.type['gård']">Gård
-			    		</label><br>
-			    		<label class="checkbox-inline">
-			    			<input type="checkbox" ng-model="propFilters.type.tomt">Tomt
-			    		</label>
-		      	</div>		    	
-			    <div class="textbox">
-			      <label>Prisintervall: </br><input type="number" value="" ng-model="propFilters.priceRange[0]"><p>till </p><input type="number" value="" ng-model="propFilters.priceRange[1]"></label>
-			    </div>			    
-			    <button ng-click="resetFilter()">Rensa alla filter</button>
-			</form>
-		</div>
     </div>
   </div>
 </section>
