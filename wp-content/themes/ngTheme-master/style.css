@@ -6556,30 +6556,18 @@ button.close {
 
 /* HEADER */
 
-#customSocialMediaLinks {
-  margin-top: -1px;
-  padding: 0 0 0 0;
-  position: relative;
-  top: -2px;
-}
-
-#customSocialMediaLinks a i {
-  color: black;
-  font-size: 40px;
+.customSocialMediaLinks li > a {
+	display: inline-block;
+	color: gray;
+  font-size: 28px;
+  padding: 5px 0px 5px 15px;
+  margin: 5px 0 0 0;
 }
 
 .socmed_wrap {
 	text-align: right;
 	padding-right: 0;
 	margin-right: 0;
-}
-
-.inline_block {
-	display: inline-block;
-}
-
-.inline_block h1, h2, h3 {
-	margin-left: 3px;
 }
 
 .logWrap {
@@ -6604,6 +6592,16 @@ button.close {
 	color: #777777;
 	margin-bottom: 5px;
 
+}
+
+/* general utility/helper classes */
+
+.inline_block {
+	display: inline-block;
+}
+
+.inline_block h1, h2, h3 {
+	margin-left: 3px;
 }
 
 .fifty_img {
