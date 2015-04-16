@@ -6674,7 +6674,23 @@ header {
   .resultRow {
     margin: 10px 0 0 0;
     background-color: #F9F9F9;
-    padding: 20px 0 0 10px;
+    padding: 20px 0 20px 10px;
+  }
+
+  .obj_thumbnail {
+  	margin-bottom: 0;
+  }
+
+  .obj_prop {
+  	font-size: 16px;
+  	font-weight: 200;
+  	margin: 0 0 3px 0;
+  }
+
+  .obj_desc p {
+  	margin: 20px 0 0 0;
+  	font-size: 16px;
+  	font-weight: 300;
   }
 
 
