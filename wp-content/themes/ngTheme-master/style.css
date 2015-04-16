@@ -6554,8 +6554,6 @@ button.close {
 
 /* -------------------- Begin SELLFORCE! -------------------- */
 
-
-
 /* HEADER */
 
 #customSocialMediaLinks {
@@ -6565,17 +6563,6 @@ button.close {
 #customSocialMediaLinks a i {
   color: black;
   font-size: 40px;
-}
-
-.filterbox {
-	display: inline-block;
-	border: 1px solid gray;
-}
-
-.filt_label {
-	font-size: 14px;
-	font-weight: normal;
-	
 }
 
 .inline_block {
@@ -6599,8 +6586,19 @@ button.close {
   padding-bottom: 10px;
 }
 
+.nav_sellforce {
+	margin-bottom: 5px;
+
+}
+
+.survey_btn {
+	color: #777777;
+	margin-bottom: 5px;
+
+}
+
 .fifty_img {
-width: 50%;
+	width: 50%;
 }
 
 .hundred_img {
@@ -6608,8 +6606,9 @@ width: 50%;
 }
 
 /*Creating space between header and main*/
+
 header {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* submenu dropdown positioning (toplevel dropdowns already look great!) */
@@ -6628,7 +6627,43 @@ header {
 
 	/* Six boxes in two rows */
 
-/* ++++ Search result, galleryesque listing of objects */
+
+
+/* ++++ Search result (including filterbox), galleryesque listing of objects */
+
+	/* Filterbox */
+
+	.filterbox {
+		display: inline-block;
+		background-color: #F8F8F8;
+	}
+
+	.filt_form_group {
+		margin-bottom: 0;
+	}
+
+	.filt_list {
+		-webkit-padding-start: 0;
+		-moz-padding-start: 0;
+	}
+
+	.filt_list li {
+		display: inline-block;
+	}
+
+	.filt_label {
+		color: #777777;
+		font-size: 15px;
+		font-weight: normal;
+		margin-right: 20px;
+		margin-left: 3px;
+		
+	}
+
+	.filt_field {
+		margin-bottom: 5px;
+	}
+
 
 	/* Object listing, each object in a row of three boxes*/
   .thumbnail img:hover {
@@ -6637,8 +6672,12 @@ header {
 
   /*Each object in searchresult.html*/
   .resultRow {
-    margin: 20px;
+    margin: 10px 0 0 0;
+    background-color: #F9F9F9;
+    padding: 20px 0 0 10px;
   }
+
+
 
 /* ++++ Single object display - all info about an object */
 
@@ -6668,6 +6707,10 @@ header {
 }
 
 	/* Jumbo */
+
+	.footer {
+		margin-top: 20px;
+	}
 
 	/* Two boxes side by side */
 
