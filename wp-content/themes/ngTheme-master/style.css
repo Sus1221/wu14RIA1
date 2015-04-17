@@ -6556,11 +6556,18 @@ button.close {
 
 /* HEADER */
 
+#bs-example-navbar-collapse-1 {
+	padding-left: 0;
+}
+.nav_flu_cont {
+		padding-left: 0;
+}
+
 .customSocialMediaLinks li > a {
 	display: inline-block;
 	color: gray;
   font-size: 28px;
-  padding: 5px 0px 5px 15px;
+  padding: 5px 0 5px 15px;
   margin: 5px 0 0 0;
 }
 
@@ -6612,7 +6619,7 @@ button.close {
 	width: 100%;
 }
 
-/*Creating space between header and main*/
+/* Creating space between header and main */
 
 header {
   margin-bottom: 5px;
@@ -6826,3 +6833,36 @@ footer #modalButton {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* Media queries */
+
+ /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 160px) {
+    	#bs-example-navbar-collapse-1 {
+				padding-left: 15px;
+			}
+			.nav_flu_cont {
+					padding-left: 15px;
+			}
+        
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+    	#bs-example-navbar-collapse-1 {
+				padding-left: 15px;
+			}
+			.nav_flu_cont {
+					padding-left: 15px;
+			}
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+    	#bs-example-navbar-collapse-1 {
+				padding-left: 0;
+			}
+			.nav_flu_cont {
+					padding-left: 0;
+			}
+    }
